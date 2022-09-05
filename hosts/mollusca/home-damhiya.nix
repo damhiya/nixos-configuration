@@ -80,19 +80,155 @@
     };
   };
 
+  home.file.kime-config.target = ".config/kime/config.yaml";
+  home.file.kime-config.text = ''
+    ---
+    daemon:
+      modules:
+        - Xim
+        - Wayland
+        - Indicator
+    indicator:
+      icon_color: Black
+    engine:
+      default_category: Latin
+      global_category_state: false
+      global_hotkeys:
+        M-Backslash:
+          behavior:
+            Mode: Math
+          result: ConsumeIfProcessed
+        M-Space:
+          behavior:
+            Toggle:
+              - Hangul
+              - Latin
+          result: Consume
+        M-C-E:
+          behavior:
+            Mode: Emoji
+          result: ConsumeIfProcessed
+        Esc:
+          behavior:
+            Switch: Latin
+          result: Bypass
+        Muhenkan:
+          behavior:
+            Toggle:
+              - Hangul
+              - Latin
+          result: Consume
+        Hangul:
+          behavior:
+            Toggle:
+              - Hangul
+              - Latin
+          result: Consume
+      category_hotkeys:
+        Hangul:
+          ControlR:
+            behavior:
+              Mode: Hanja
+            result: Consume
+          HangulHanja:
+            behavior:
+              Mode: Hanja
+            result: Consume
+          F9:
+            behavior:
+              Mode: Hanja
+            result: ConsumeIfProcessed
+      mode_hotkeys:
+        Math:
+          Enter:
+            behavior: Commit
+            result: ConsumeIfProcessed
+          Tab:
+            behavior: Commit
+            result: ConsumeIfProcessed
+        Hanja:
+          Enter:
+            behavior: Commit
+            result: ConsumeIfProcessed
+          Tab:
+            behavior: Commit
+            result: ConsumeIfProcessed
+        Emoji:
+          Enter:
+            behavior: Commit
+            result: ConsumeIfProcessed
+          Tab:
+            behavior: Commit
+            result: ConsumeIfProcessed
+      xim_preedit_font:
+        - Noto Sans CJK KR
+        - 30.0
+      latin:
+        layout: Qwerty
+        preferred_direct: true
+      hangul:
+        layout: dubeolsik
+        word_commit: false
+        addons:
+          all: []
+          dubeolsik:
+            - TreatJongseongAsChoseong
+  '';
+
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacsPgtkNativeComp;
+
+  programs.git.enable = true;
+  programs.git.userName = "damhiya";
+  programs.git.userEmail = "damhiya@gmail.com";
+  programs.git.delta.enable = true;
+  programs.git.delta.options = { navigate = true; line-numbers = true; };
+  programs.git.extraConfig = {
+    diff = { colorMoved = "default"; };
+    merge = { conflictstyle = "diff3"; };
+    init = { defaultBranch = "main"; };
+    credential = { helper = "store"; };
+  };
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   programs.vscode.enable = true;
   programs.foot.enable = true;
+  programs.foot.settings = {
+    main = { font = "Iosevka Term:size=11"; };
+    colors = {
+      alpha = "1.0";
+      foreground = "ffffff";
+      background = "000000";
+
+      regular0 = "7f8c98";
+      regular1 = "ff8170";
+      regular2 = "acf2e4";
+      regular3 = "ffa14f";
+      regular4 = "6bdfff";
+      regular5 = "ff7ab2";
+      regular6 = "dabaff";
+      regular7 = "dfdfe0";
+
+      dim0 = "414453";
+      dim1 = "ff8170";
+      dim2 = "78c2b3";
+      dim3 = "d9c97c";
+      dim4 = "4eb0cc";
+      dim5 = "ff7ab2";
+      dim6 = "b281eb";
+      dim7 = "dfdfe0";
+    };
+  };
   programs.firefox.enable = true;
   programs.chromium.enable = true;
   programs.feh.enable = true;
   programs.rofi.enable = true;
   programs.fish.enable = true;
   programs.bash.enable = true;
+  programs.bash.initExtra = ''
+    set -o vi
+  '';
   programs.bash.shellAliases = {
     grep = "grep --color";
     emc = "emacsclient -nc";
