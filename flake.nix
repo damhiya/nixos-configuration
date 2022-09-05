@@ -32,5 +32,22 @@
         ];
       };
 
+      nixosConfigurations.mollusca = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          {
+            system.configurationRevision =
+              nixpkgs.lib.mkIf (self ? rev) self.rev;
+            nixpkgs.overlays = [
+              nixpkgs-wayland.overlay
+              emacs-overlay.overlay
+              notsodeep-overlay.overlay
+            ];
+          }
+          ./hosts/mollusca/configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
+      };
+
     };
 }

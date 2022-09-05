@@ -101,6 +101,7 @@ pkgs: {
     # DE
     wl-clipboard
     wf-recorder
+    wdisplays
     fuzzel
     swaybg
     polybar
