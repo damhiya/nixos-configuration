@@ -33,6 +33,7 @@ in {
   boot.loader.systemd-boot.editor = false;
   boot.supportedFilesystems = [ "ntfs" "zfs" ];
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  boot.blacklistedKernelModules = [ "snd_hda_intel" "snd_soc_skl" ];
 
   programs.light.enable = true;
   hardware.opengl = {
