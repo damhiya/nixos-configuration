@@ -59,7 +59,7 @@ pkgs: {
     # development
     twelf
     chez
-    julia_17-bin
+    julia-bin
     nasm
     smlnj
     mercury
