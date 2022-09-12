@@ -153,6 +153,10 @@ in {
   virtualisation.virtualbox.host.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver = {
+  #   enable = true;
+  #   windowManager.xmonad.enable = true;
+  # };
 
   users.users.damhiya = {
     isNormalUser = true;
