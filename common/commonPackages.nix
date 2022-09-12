@@ -26,6 +26,7 @@ pkgs: {
     zstd
     lz4
     p7zip
+    efibootmgr
 
     file
     tree
