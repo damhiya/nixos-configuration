@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-{
+{ ... }: {
   nix = {
     extraOptions = ''
       keep-outputs = true
