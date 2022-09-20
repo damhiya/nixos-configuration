@@ -33,7 +33,6 @@ pkgs: {
     pciutils
     lm_sensors
     smartmontools
-    notsodeep
     android-file-transfer
     neofetch
 

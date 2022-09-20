@@ -7,6 +7,7 @@ let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
     ../../mixins/nix.nix
+    ../../mixins/notsodeep.nix
     ./hardware-configuration.nix
   ];
 
@@ -86,12 +87,6 @@ in {
     glmark2
     pulsemixer
   ]);
-
-  systemd.services.notsodeep = {
-    description = "notsodeep";
-    serviceConfig = { ExecStart = "${pkgs.notsodeep}/bin/notsodeep"; };
-    wantedBy = [ "multi-user.target" ];
-  };
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
