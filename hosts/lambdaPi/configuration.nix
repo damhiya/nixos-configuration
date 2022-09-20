@@ -8,6 +8,7 @@ in {
   imports = [
     ../../mixins/nix.nix
     ../../mixins/notsodeep.nix
+    ../../mixins/neovim.nix
     ./hardware-configuration.nix
   ];
 
@@ -99,9 +100,6 @@ in {
     # WLR_NO_HARDWARE_CURSORS = "1";
   };
   programs.dconf.enable = true;
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-  programs.neovim.configure = import ../../common/neovim.nix pkgs;
   services.openssh.enable = true;
   services.thermald.enable = true;
   services.printing.enable = true;
