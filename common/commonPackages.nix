@@ -27,6 +27,7 @@ pkgs: {
     lz4
     p7zip
     efibootmgr
+    gptfdisk
 
     file
     tree
