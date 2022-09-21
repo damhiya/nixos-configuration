@@ -7,6 +7,7 @@ let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
     ../../mixins/nix.nix
+    ../../mixins/locale.nix
     ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix
     ../../mixins/neovim.nix
@@ -67,16 +68,8 @@ in {
     '';
   };
 
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.inputMethod = {
-    enabled = "kime";
-    kime.config.icon_color = "White";
-  };
-
   # console.font = "Lat2-Terminus16";
   console.keyMap = "us";
-
-  time.timeZone = "Asia/Seoul";
 
   environment.defaultPackages = commonPackages.defaultPackages;
   environment.systemPackages = commonPackages.systemPackages ++ (with pkgs; [
