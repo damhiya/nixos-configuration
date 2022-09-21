@@ -7,6 +7,7 @@ let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
     ../../mixins/nix.nix
+    ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix
     ../../mixins/neovim.nix
     ./hardware-configuration.nix
@@ -75,7 +76,6 @@ in {
   # console.font = "Lat2-Terminus16";
   console.keyMap = "us";
 
-  fonts.fonts = import ../../common/fonts.nix pkgs;
   time.timeZone = "Asia/Seoul";
 
   environment.defaultPackages = commonPackages.defaultPackages;
