@@ -178,8 +178,6 @@
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacsPgtkNativeComp;
 
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
   programs.vscode.enable = true;
   programs.firefox.enable = true;
   programs.chromium.enable = true;

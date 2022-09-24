@@ -1,4 +1,4 @@
-let modules = [ ./bash.nix ./git.nix ./foot.nix ];
+let modules = [ ./bash.nix ./git.nix ./foot.nix ./direnv.nix ];
 in {
   imports = map (m: { home-manager.users.damhiya = m; }) modules;
 
