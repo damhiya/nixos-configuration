@@ -23,10 +23,6 @@
           emacs-overlay.overlay
           notsodeep-overlay.overlay
         ];
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-        };
       };
     in {
 

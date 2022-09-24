@@ -7,6 +7,7 @@ let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
     ../../mixins/nix.nix
+    ../../mixins/home-manager.nix
     ../../mixins/defaultPackages.nix
     ../../mixins/sysutils.nix
     ../../mixins/android-file-transfer.nix
