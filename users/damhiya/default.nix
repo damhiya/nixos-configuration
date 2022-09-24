@@ -1,6 +1,7 @@
 let modules = [ ./bash.nix ./git.nix ./foot.nix ./direnv.nix ];
 in {
-  imports = map (m: { home-manager.users.damhiya = m; }) modules;
+  imports =
+    map (m: args: { home-manager.users.damhiya = import m args; }) modules;
 
   home-manager.users.damhiya = {
     home.username = "damhiya";
