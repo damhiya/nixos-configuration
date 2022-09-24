@@ -175,9 +175,6 @@
             - TreatJongseongAsChoseong
   '';
 
-  programs.emacs.enable = true;
-  programs.emacs.package = pkgs.emacsPgtkNativeComp;
-
   programs.vscode.enable = true;
   programs.firefox.enable = true;
   programs.chromium.enable = true;
