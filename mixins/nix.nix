@@ -1,4 +1,4 @@
-{ ... }: {
+{
   nix = {
     extraOptions = ''
       keep-outputs = true
