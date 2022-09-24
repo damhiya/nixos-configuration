@@ -13,40 +13,31 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay
-    , notsodeep-overlay }: {
+    , notsodeep-overlay }:
+    let
+      baseModule = {
+        imports = [ home-manager.nixosModules.home-manager ];
+        system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+        nixpkgs.overlays = [
+          nixpkgs-wayland.overlay
+          emacs-overlay.overlay
+          notsodeep-overlay.overlay
+        ];
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+        };
+      };
+    in {
 
       nixosConfigurations.lambdaPi = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          {
-            system.configurationRevision =
-              nixpkgs.lib.mkIf (self ? rev) self.rev;
-            nixpkgs.overlays = [
-              nixpkgs-wayland.overlay
-              emacs-overlay.overlay
-              notsodeep-overlay.overlay
-            ];
-          }
-          ./hosts/lambdaPi/configuration.nix
-          home-manager.nixosModules.home-manager
-        ];
+        modules = [ baseModule ./hosts/lambdaPi/configuration.nix ];
       };
 
       nixosConfigurations.mollusca = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          {
-            system.configurationRevision =
-              nixpkgs.lib.mkIf (self ? rev) self.rev;
-            nixpkgs.overlays = [
-              nixpkgs-wayland.overlay
-              emacs-overlay.overlay
-              notsodeep-overlay.overlay
-            ];
-          }
-          ./hosts/mollusca/configuration.nix
-          home-manager.nixosModules.home-manager
-        ];
+        modules = [ baseModule ./hosts/mollusca/configuration.nix ];
       };
 
     };

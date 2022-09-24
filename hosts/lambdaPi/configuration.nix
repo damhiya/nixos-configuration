@@ -133,8 +133,6 @@ in {
     extraGroups = [ "wheel" "audio" "video" "docker" "vboxusers" ];
   };
 
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
   home-manager.users.damhiya = import ./home-damhiya.nix;
 
   system.stateVersion = "22.05";
