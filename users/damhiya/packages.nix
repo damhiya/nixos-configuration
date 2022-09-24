@@ -1,5 +1,5 @@
-pkgs: {
-  userPackages = with pkgs; [
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
     # ocaml & coq
     coq
 

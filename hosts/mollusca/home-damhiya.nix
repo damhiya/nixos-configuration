@@ -182,7 +182,6 @@
   programs.rofi.enable = true;
   programs.fish.enable = true;
 
-  home.packages = (import ../../common/commonPackages.nix pkgs).userPackages;
   # home.sessionVariables = {};
   # export PATH=$PATH:$HOME/.cabal/bin
 }

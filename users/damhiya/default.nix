@@ -1,9 +1,18 @@
 let
-  modules =
-    [ ./bash.nix ./git.nix ./emacs.nix ./foot.nix ./direnv.nix ./ghc.nix ];
+  modules = [
+    ./bash.nix
+    ./git.nix
+    ./emacs.nix
+    ./foot.nix
+    ./direnv.nix
+    ./ghc.nix
+    ./packages.nix
+  ];
 in {
-  imports =
-    map (m: args: { home-manager.users.damhiya = import m args; }) modules;
+  imports = map (m:
+    { pkgs, ... }: {
+      home-manager.users.damhiya = import m { inherit pkgs; };
+    }) modules;
 
   home-manager.users.damhiya = {
     home.username = "damhiya";
