@@ -178,18 +178,6 @@
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacsPgtkNativeComp;
 
-  programs.git.enable = true;
-  programs.git.userName = "damhiya";
-  programs.git.userEmail = "damhiya@gmail.com";
-  programs.git.delta.enable = true;
-  programs.git.delta.options = { navigate = true; line-numbers = true; };
-  programs.git.extraConfig = {
-    diff = { colorMoved = "default"; };
-    merge = { conflictstyle = "diff3"; };
-    init = { defaultBranch = "main"; };
-    credential = { helper = "store"; };
-  };
-
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   programs.vscode.enable = true;
@@ -238,8 +226,4 @@
   home.packages = (import ../../common/commonPackages.nix pkgs).userPackages;
   # home.sessionVariables = {};
   # export PATH=$PATH:$HOME/.cabal/bin
-
-  home.username = "damhiya";
-  home.homeDirectory = "/home/damhiya";
-  home.stateVersion = "22.05";
 }

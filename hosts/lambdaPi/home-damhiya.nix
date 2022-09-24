@@ -100,8 +100,4 @@
   home.packages = (import ../../common/commonPackages.nix pkgs).userPackages;
   # home.sessionVariables = {};
   # export PATH=$PATH:$HOME/.cabal/bin
-
-  home.username = "damhiya";
-  home.homeDirectory = "/home/damhiya";
-  home.stateVersion = "22.05";
 }

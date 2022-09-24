@@ -16,6 +16,8 @@ in {
     ../../mixins/notsodeep.nix
     ../../mixins/neovim.nix
     ./hardware-configuration.nix
+
+    ../../users/damhiya
   ];
 
   nixpkgs.config.allowUnfree = true;
