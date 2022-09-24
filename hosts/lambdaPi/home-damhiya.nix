@@ -84,7 +84,6 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   programs.vscode.enable = true;
-  programs.foot.enable = true;
   programs.firefox.enable = true;
   programs.chromium.enable = true;
   programs.feh.enable = true;
