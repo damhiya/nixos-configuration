@@ -186,15 +186,6 @@
   programs.feh.enable = true;
   programs.rofi.enable = true;
   programs.fish.enable = true;
-  programs.bash.enable = true;
-  programs.bash.initExtra = ''
-    set -o vi
-  '';
-  programs.bash.shellAliases = {
-    grep = "grep --color";
-    emc = "emacsclient -nc";
-    nv = "neovide";
-  };
 
   home.packages = (import ../../common/commonPackages.nix pkgs).userPackages;
   # home.sessionVariables = {};
