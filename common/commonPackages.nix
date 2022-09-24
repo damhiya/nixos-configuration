@@ -1,14 +1,5 @@
 pkgs: {
-  userPackages = let hsPkgs = pkgs: with pkgs; [ split ieee754 vector async ];
-  in with pkgs; [
-    # haskell & agda
-    (ghc.withPackages hsPkgs)
-    cabal-install
-    hpack
-    cabal2nix
-    agda
-    haskellPackages.fix-whitespace
-
+  userPackages = with pkgs; [
     # ocaml & coq
     coq
 
