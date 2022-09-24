@@ -1,46 +1,4 @@
 pkgs: {
-  defaultPackages = with pkgs; [ perl rsync strace killall htop curl wget ];
-
-  systemPackages = with pkgs; [
-    # devel
-    llvm_14
-    clang_14
-    lldb_14
-
-    gcc12
-    gfortran12
-    gdb
-    binutils
-
-    git
-    gnumake
-    ninja
-    cmake
-    nixfmt
-    shellcheck
-    cachix
-
-    # utils
-    zip
-    unzipNLS
-    zstd
-    lz4
-    p7zip
-    efibootmgr
-    gptfdisk
-
-    file
-    tree
-    pciutils
-    lm_sensors
-    smartmontools
-    android-file-transfer
-    neofetch
-
-    tmux
-    xclip
-  ];
-
   userPackages = let hsPkgs = pkgs: with pkgs; [ split ieee754 vector async ];
   in with pkgs; [
     # haskell & agda
@@ -100,6 +58,7 @@ pkgs: {
     qbittorrent
 
     # DE
+    xclip
     wl-clipboard
     wf-recorder
     wdisplays

@@ -7,6 +7,10 @@ let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
     ../../mixins/nix.nix
+    ../../mixins/defaultPackages.nix
+    ../../mixins/sysutils.nix
+    ../../mixins/android-file-transfer.nix
+    ../../mixins/compilers.nix
     ../../mixins/locale.nix
     ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix
@@ -72,15 +76,14 @@ in {
   # console.font = "Lat2-Terminus16";
   console.keyMap = "us";
 
-  environment.defaultPackages = commonPackages.defaultPackages;
-  environment.systemPackages = commonPackages.systemPackages ++ (with pkgs; [
+  environment.systemPackages = with pkgs; [
     cudaPackages_11_2.cudatoolkit
     nvtop
     glxinfo
     vulkan-tools
     glmark2
     pulsemixer
-  ]);
+  ];
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
