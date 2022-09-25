@@ -18,6 +18,7 @@
       baseModule = {
         imports = [ home-manager.nixosModules.home-manager ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+        nix.registry.nixos.flake = nixpkgs;
         nixpkgs.overlays = [
           nixpkgs-wayland.overlay
           emacs-overlay.overlay
