@@ -8,6 +8,7 @@ let
     ./ghc.nix
     ./packages.nix
     ./programs.nix
+    ./kime.nix
   ];
 in {
   imports = map (m:
