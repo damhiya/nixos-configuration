@@ -105,6 +105,7 @@ in {
   services.thermald.enable = true;
   services.printing.enable = true;
   services.blueman.enable = true;
+  services.fprintd.enable = true;
   xdg.mime.defaultApplications = {
     # firefox
     "x-scheme-handler/http" = "firefox.desktop";
