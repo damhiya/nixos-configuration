@@ -3,6 +3,7 @@
     # hardware maanagement
     efibootmgr
     pciutils
+    usbutils
     gptfdisk
 
     # compressors
