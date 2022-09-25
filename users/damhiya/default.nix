@@ -7,6 +7,7 @@ let
     ./direnv.nix
     ./ghc.nix
     ./packages.nix
+    ./programs.nix
   ];
 in {
   imports = map (m:
