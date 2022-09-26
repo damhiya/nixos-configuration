@@ -106,6 +106,7 @@ in {
   services.printing.enable = true;
   services.blueman.enable = true;
   services.fprintd.enable = true;
+  services.zfs.autoScrub.enable = true;
   xdg.mime.defaultApplications = {
     # firefox
     "x-scheme-handler/http" = "firefox.desktop";
