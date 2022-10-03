@@ -10,11 +10,8 @@ let
     ./programs.nix
     ./kime.nix
   ];
-in {
-  imports = map (m:
-    { pkgs, ... }: {
-      home-manager.users.damhiya = import m { inherit pkgs; };
-    }) modules;
+in { pkgs, config, ... }@args: {
+  imports = map (m: { home-manager.users.damhiya = import m args; }) modules;
 
   home-manager.users.damhiya = {
     home.username = "damhiya";
