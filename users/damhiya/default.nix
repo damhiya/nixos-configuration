@@ -3,13 +3,13 @@ let
     ./bash.nix
     ./git.nix
     ./emacs.nix
-    ./foot.nix
+    ./termite.nix
     ./direnv.nix
     ./ghc.nix
     ./packages.nix
     ./programs.nix
     ./kime.nix
-    ./sway.nix
+    ./xmonad.nix
   ];
 in { pkgs, config, ... }@args: {
   imports = map (m: { home-manager.users.damhiya = import m args; }) modules;

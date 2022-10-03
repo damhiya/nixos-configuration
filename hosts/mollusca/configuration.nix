@@ -90,14 +90,7 @@ in {
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    EGL_PLATFORM = "wayland";
-    SDL_VIDEODRIVER = "wayland";
-    GDK_BACKEND = "wayland";
-    GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "iHD";
-    MOZ_ENABLE_WAYLAND = "1";
-    NIXOS_OZONE_WL = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
     BROWSER = "firefox";
   };
   programs.dconf.enable = true;
@@ -133,10 +126,13 @@ in {
   virtualisation.virtualbox.host.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  # services.xserver = {
-  #   enable = true;
-  #   windowManager.xmonad.enable = true;
-  # };
+  services.xserver = {
+    enable = true;
+    dpi = 150;
+    libinput.enable = true;
+    windowManager.xmonad.enable = true;
+    windowManager.xmonad.enableContribAndExtras = true;
+  };
 
   users.users.damhiya = {
     isNormalUser = true;
