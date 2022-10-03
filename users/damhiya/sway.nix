@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-
+{ pkgs, config, ... }: {
   wayland.windowManager.sway = {
     enable = true;
     xwayland = false;
@@ -65,21 +64,29 @@
       ];
 
       input = {
-        "1267:12813:ELAN0686:00_04F3:320D_Touchpad" = {
+        lambdaPi."1739:31251:DLL07BE:01_06CB:7A13_Touchpad" = {
           tap = "enabled";
           natural_scroll = "enabled";
           accel_profile = "flat";
           pointer_accel = "0.5";
         };
-      };
+        mollusca."1267:12813:ELAN0686:00_04F3:320D_Touchpad" = {
+          tap = "enabled";
+          natural_scroll = "enabled";
+          accel_profile = "flat";
+          pointer_accel = "0.5";
+        };
+      }."${config.networking.hostName}";
 
       output = {
-        eDP-1 = { scale = "1.4"; pos = "0 0"; };
-        # DP-2 = { scale = "1.4"; pos = "1830 0"; };
-      };
+        lambdaPi = {
+          eDP-1 = { scale = "2.0"; };
+          DP-1 = { scale = "1.56"; };
+        };
+        mollusca = {
+          eDP-1 = { scale = "1.4"; pos = "0 0"; };
+        };
+      }."${config.networking.hostName}";
     };
   };
-
-  # home.sessionVariables = {};
-  # export PATH=$PATH:$HOME/.cabal/bin
 }

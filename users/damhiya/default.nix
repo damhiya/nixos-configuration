@@ -9,6 +9,7 @@ let
     ./packages.nix
     ./programs.nix
     ./kime.nix
+    ./sway.nix
   ];
 in { pkgs, config, ... }@args: {
   imports = map (m: { home-manager.users.damhiya = import m args; }) modules;
