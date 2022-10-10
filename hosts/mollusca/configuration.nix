@@ -130,6 +130,11 @@ in {
     enable = true;
     dpi = 150;
     libinput.enable = true;
+    libinput.touchpad = {
+      naturalScrolling = true;
+      accelProfile = "flat";
+      accelSpeed = "1.0";
+    };
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
   };
