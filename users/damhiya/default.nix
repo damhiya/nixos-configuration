@@ -10,6 +10,7 @@ let
     ./programs.nix
     ./kime.nix
     ./xmonad.nix
+    ./polybar.nix
   ];
 in { pkgs, config, ... }@args: {
   imports = map (m: { home-manager.users.damhiya = import m args; }) modules;
