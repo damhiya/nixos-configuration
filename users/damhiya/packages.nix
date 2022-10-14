@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # ocaml & coq
-    coq
+    coq_8_16
 
     # lean
     elan
