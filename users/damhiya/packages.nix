@@ -62,6 +62,7 @@
     arandr
 
     # others
+    obsidian
     bat
     delta
     duf
