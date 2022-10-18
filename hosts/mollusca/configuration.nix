@@ -16,6 +16,7 @@ in {
     ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix
     ../../mixins/neovim.nix
+    ../../mixins/breeze.nix
     ./hardware-configuration.nix
 
     ../../users/damhiya

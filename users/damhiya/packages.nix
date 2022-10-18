@@ -56,8 +56,6 @@
     fuzzel
     swaybg
     polybar
-    breeze-qt5
-    breeze-icons
     dolphin
     arandr
 
