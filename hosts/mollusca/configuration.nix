@@ -129,12 +129,20 @@ in {
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver = {
     enable = true;
+    xrandrHeads = [ "eDP-1-1" "DP-2" ];
     dpi = 150;
     libinput.enable = true;
     libinput.touchpad = {
       naturalScrolling = true;
       accelProfile = "flat";
       accelSpeed = "1.0";
+    };
+    displayManager = {
+      lightdm.enable = true;
+      setupCommands = ''
+        xrandr --output eDP-1-1 --primary
+        xrandr --output DP-2 --right-of eDP-1-1
+      '';
     };
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
