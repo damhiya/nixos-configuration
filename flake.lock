@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665662508,
-        "narHash": "sha256-En+hbMQheTW0E3f2A/kSIlQgy7luxtB9Fmlm+2J++gc=",
+        "lastModified": 1666382611,
+        "narHash": "sha256-XTT5sL+msuYcyzh3aLG3Ekip7NiRRYJkqE/PT6p38N4=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "dddc3dcd012a749ea7d86623d93db2ae99213aff",
+        "rev": "ffc00124f627fd5dec1d649555aa128b66ce6bc7",
         "type": "github"
       },
       "original": {
@@ -91,11 +91,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1665655007,
-        "narHash": "sha256-34ZMJlgqJb73RY/gJz8B4cjdM5ukas2crMYQpmyRGeQ=",
+        "lastModified": 1666253070,
+        "narHash": "sha256-MtaNgghmfp+ywh5mv9FcspFT4ACaYINSN+D98PCkrP0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "8cbc6500dfca22d907054f68c564019b3b6cf295",
+        "rev": "c485669ca529e01c1505429fa9017c9a93f15559",
         "type": "github"
       },
       "original": {
@@ -125,11 +125,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1665580254,
-        "narHash": "sha256-hO61XPkp1Hphl4HGNzj1VvDH5URt7LI6LaY/385Eul4=",
+        "lastModified": 1666282307,
+        "narHash": "sha256-O1T2HGLARLKDLfdOmjPBfn3eC4cSIaQD71wUN4I/6/s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f634d427b0224a5f531ea5aa10c3960ba6ec5f0f",
+        "rev": "b7d8c687782c8f9a1d425a7e486eb989654f6468",
         "type": "github"
       },
       "original": {
@@ -164,11 +164,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665678815,
-        "narHash": "sha256-pBdA5yGJsYz+UVdPVtbSr7oF+ggyJNLZZb1GEHwMBKw=",
+        "lastModified": 1665858291,
+        "narHash": "sha256-aqazSjyKXnHu0PF7K1Y4i6E4UK/w+BTC5NTu+FvPg/c=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "a6eabfdc98b720ac16ffa1234268668a8577876f",
+        "rev": "1e4635a232db95976217590c77f5d76a91a87f61",
         "type": "github"
       },
       "original": {
@@ -182,11 +182,11 @@
         "notsodeep-src": "notsodeep-src"
       },
       "locked": {
-        "lastModified": 1641517531,
-        "narHash": "sha256-TYauE3m31dkWmm6Rxgc51n64SPXJ/FHc4S6txUj+x3o=",
+        "lastModified": 1666425484,
+        "narHash": "sha256-NrIRhzzbMgeftd/cGY+GlY/HidSuwLjLd8r+VFr9jOw=",
         "owner": "damhiya",
         "repo": "notsodeep-overlay",
-        "rev": "815eba76a645d4f4eac6470267811c167f6b992d",
+        "rev": "bf94085ef1f61a3d1273aaf16bd5a70b6303cd5c",
         "type": "github"
       },
       "original": {

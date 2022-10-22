@@ -20,9 +20,9 @@
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         nix.registry.nixos.flake = nixpkgs;
         nixpkgs.overlays = [
-          nixpkgs-wayland.overlay
-          emacs-overlay.overlay
-          notsodeep-overlay.overlay
+          nixpkgs-wayland.overlays.default
+          emacs-overlay.overlays.default
+          notsodeep-overlay.overlays.default
         ];
       };
     in {
