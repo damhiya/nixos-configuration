@@ -7,7 +7,7 @@
 
     foregroundColor = "#ffffff";
     foregroundBoldColor = "#ffffff";
-    backgroundColor = "#000000";
+    backgroundColor = "rgba(0,0,0,0.6)";
     cursorColor = "#ffffff";
 
     colorsExtra = ''

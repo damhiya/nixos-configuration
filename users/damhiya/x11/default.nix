@@ -1,3 +1,4 @@
 { pkgs, ... }: {
-  imports = [ ./xmonad.nix ./termite.nix ./polybar.nix ./programs.nix ];
+  imports =
+    [ ./xmonad.nix ./termite.nix ./polybar.nix ./picom.nix ./programs.nix ];
 }
