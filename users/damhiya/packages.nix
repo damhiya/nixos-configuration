@@ -47,15 +47,8 @@
     tdesktop
     qbittorrent
 
-    # DE
-    wl-clipboard
-    wf-recorder
-    wdisplays
-    fuzzel
-    swaybg
-    dolphin
-
     # others
+    dolphin
     obsidian
     bat
     delta
