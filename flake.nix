@@ -9,11 +9,12 @@
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    iosevka-custom.url = "github:damhiya/iosevka-custom";
     notsodeep-overlay.url = "github:damhiya/notsodeep-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay
-    , notsodeep-overlay }:
+    , iosevka-custom, notsodeep-overlay }:
     let
       baseModule = {
         imports = [ home-manager.nixosModules.home-manager ];
@@ -22,6 +23,7 @@
         nixpkgs.overlays = [
           nixpkgs-wayland.overlays.default
           emacs-overlay.overlays.default
+          iosevka-custom.overlays.default
           notsodeep-overlay.overlays.default
         ];
       };
@@ -37,5 +39,6 @@
         modules = [ baseModule ./hosts/mollusca/configuration.nix ];
       };
 
+      packages = iosevka-custom.packages;
     };
 }
