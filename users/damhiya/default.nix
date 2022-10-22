@@ -4,14 +4,12 @@
       ./bash.nix
       ./git.nix
       ./emacs.nix
-      ./termite.nix
       ./direnv.nix
       ./ghc.nix
       ./packages.nix
       ./programs.nix
       ./kime.nix
-      ./xmonad.nix
-      ./polybar.nix
+      ./x11
     ];
 
     home.username = "damhiya";

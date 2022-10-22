@@ -18,7 +18,6 @@
     loc
     gnuplot
     neovide
-    # mkl
 
     # document
     texlive.combined.scheme-full
@@ -49,15 +48,12 @@
     qbittorrent
 
     # DE
-    xclip
     wl-clipboard
     wf-recorder
     wdisplays
     fuzzel
     swaybg
-    polybar
     dolphin
-    arandr
 
     # others
     obsidian
@@ -69,7 +65,5 @@
     filelight
     waifu2x-converter-cpp
     osu-lazer
-    # singularity
-    # steam
   ];
 }
