@@ -2,7 +2,7 @@
   programs.foot = {
     enable = true;
     settings = {
-      main = { font = "Iosevka Term:size=11"; };
+      main = { font = "Iosevka Fixed:size=11"; };
       colors = {
         alpha = "1.0";
         foreground = "ffffff";

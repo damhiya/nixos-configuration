@@ -35,7 +35,7 @@
         set cindent
         set autoindent
         set smartindent
-        set guifont=Iosevka\ Term:h14
+        set guifont=Iosevka\ Fixed:h14
 
         " lightline
         set laststatus=2

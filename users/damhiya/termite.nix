@@ -1,7 +1,7 @@
 { ... }: {
   programs.termite = {
     enable = true;
-    font = "Iosevka Term 11";
+    font = "Iosevka Fixed 11";
     scrollbackLines = -1;
     scrollbar = "off";
 
