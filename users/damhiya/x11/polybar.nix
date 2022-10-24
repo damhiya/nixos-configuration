@@ -3,23 +3,51 @@
     enable = true;
     settings = {
       "bar/bottom" = {
-        width = "100%";
-        height = "3%";
         bottom = true;
-        modules-right = "battery date";
+        width = "100%:-6";
+        height = "40";
+        offset-x = "3";
+        offset-y = "3";
+        background = "#00000000";
+        foreground = "#F5F5F5";
+        # border-size
+        # border-color
+        padding = 1;
+        module-margin = 1;
+        font = [ "Iosevka Nerd Font:pixelsize=16;4" ];
+        # modules-left
+        # modules-center
+        modules-right = "network battery date";
+        tray-position = "left";
+        tray-background = "#F5F5F5";
       };
       "module/date" = {
         type = "internal/date";
-        internal = 5;
-        date = "%y.%m.%d";
-        time = "%H:%M:%S";
+        date = "%F";
+        time = "%T";
         label = "%date% %time%";
       };
       "module/battery" = {
         type = "internal/battery";
         battery = "BAT0";
         adapter = "AC";
-        full-at = 100;
+        format-full = "<label-full>";
+        format-charging = "<animation-charging>  <label-charging>";
+        format-discharging = "<ramp-capacity>  <label-discharging>";
+        label-full = "  Full %consumption%W";
+        label-charging = "%percentage%% %consumption%W";
+        label-discharging = "%percentage%% %consumption%W";
+        animation-charging = [ "" "" "" "" "" ];
+        animation-charging-framerate = 750;
+        ramp-capacity = [ "" "" "" "" "" ];
+      };
+      "module/network" = {
+        type = "internal/network";
+        interface = "wlp0s20f3";
+        format-connected = "<label-connected>";
+        format-disconnected = "<label-disconnected>";
+        label-connected = "直  %essid%  %upspeed%  %downspeed%";
+        label-disconnected = "睊  Offline";
       };
     };
     script = ''
