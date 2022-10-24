@@ -93,6 +93,7 @@ in {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     LIBVA_DRIVER_NAME = "iHD";
     BROWSER = "firefox";
+    MOZ_USE_XINPUT2 = "1";
   };
   programs.dconf.enable = true;
   services.openssh.enable = true;
