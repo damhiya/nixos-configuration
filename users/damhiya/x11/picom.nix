@@ -13,6 +13,7 @@
         method = "dual_kawase";
         strength = 10;
       };
+      blur-background-exclude = [ "class_g = 'firefox'" ];
     };
   };
 }
