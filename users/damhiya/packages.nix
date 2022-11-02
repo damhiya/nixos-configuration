@@ -43,6 +43,7 @@
     zulip
     discord
     slack
+    element-desktop
     zoom-us
     tdesktop
     qbittorrent
