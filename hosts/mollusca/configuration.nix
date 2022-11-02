@@ -10,6 +10,7 @@ in {
     ../../mixins/home-manager.nix
     ../../mixins/defaultPackages.nix
     ../../mixins/sysutils.nix
+    ../../mixins/pipewire.nix
     ../../mixins/android-file-transfer.nix
     ../../mixins/compilers.nix
     ../../mixins/locale.nix
@@ -54,12 +55,7 @@ in {
   hardware.bluetooth.enable = true;
 
   hardware.opentabletdriver.enable = true;
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
-  };
+  security.rtkit.enable = true;
 
   networking = {
     hostId = "8d59776a";
@@ -85,7 +81,6 @@ in {
     glxinfo
     vulkan-tools
     glmark2
-    pulsemixer
   ];
 
   environment.variables = {
