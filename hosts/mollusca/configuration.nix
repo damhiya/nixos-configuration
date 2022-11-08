@@ -11,6 +11,7 @@ in {
     ../../mixins/defaultPackages.nix
     ../../mixins/sysutils.nix
     ../../mixins/pipewire.nix
+    ../../mixins/bluetooth.nix
     ../../mixins/android-file-transfer.nix
     ../../mixins/compilers.nix
     ../../mixins/locale.nix
@@ -52,7 +53,6 @@ in {
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
-  hardware.bluetooth.enable = true;
 
   hardware.opentabletdriver.enable = true;
   security.rtkit.enable = true;
