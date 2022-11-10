@@ -4,11 +4,12 @@
     font = "Iosevka Fixed 11";
     scrollbackLines = -1;
     scrollbar = "off";
+    cursorBlink = "on";
 
     foregroundColor = "#ffffff";
     foregroundBoldColor = "#ffffff";
     backgroundColor = "rgba(0,0,0,0.6)";
-    cursorColor = "#ffffff";
+    cursorColor = "#57fd76";
 
     colorsExtra = ''
       # black
