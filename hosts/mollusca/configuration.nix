@@ -143,12 +143,6 @@ in {
     windowManager.xmonad.enableContribAndExtras = true;
   };
 
-  users.users.damhiya = {
-    isNormalUser = true;
-    home = "/home/damhiya";
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "docker" "vboxusers" ];
-  };
-
   system.stateVersion = "22.05";
 }
 
