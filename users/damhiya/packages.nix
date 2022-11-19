@@ -49,6 +49,7 @@
     qbittorrent
 
     # others
+    pavucontrol
     dolphin
     obsidian
     bat
