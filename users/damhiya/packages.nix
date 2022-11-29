@@ -8,6 +8,7 @@
 
     # development
     twelf
+    ocamlPackages.elpi
     chez
     julia-bin
     nasm
