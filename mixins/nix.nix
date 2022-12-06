@@ -10,6 +10,8 @@
       substituters = [
         "https://nix-community.cachix.org"
         "https://nixpkgs-wayland.cachix.org"
+      ];
+      trusted-substituters = [
         "https://hydra.iohk.io"
       ];
       trusted-public-keys = [
