@@ -41,7 +41,7 @@ in {
       # vdpau
       pkgs.libvdpau
       # vaapi
-      pkgs.intel-media-driver     # "iHD"
+      # pkgs.intel-media-driver     # "iHD"
       pkgs.vaapiVdpau             # "vdpau"
       pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
@@ -76,7 +76,7 @@ in {
   console.keyMap = "us";
 
   environment.systemPackages = with pkgs; [
-    cudaPackages_11_2.cudatoolkit
+    cudaPackages.cudatoolkit
     nvtop
     glxinfo
     vulkan-tools
@@ -85,7 +85,7 @@ in {
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    LIBVA_DRIVER_NAME = "iHD";
+    # LIBVA_DRIVER_NAME = "iHD";
     BROWSER = "firefox";
     MOZ_USE_XINPUT2 = "1";
   };
