@@ -1,8 +1,6 @@
-{ ... }:
-{
-  # xsession.enable = true;
-  # xsession.windowManager.xmonad = {
-  #   enable = true;
-  #   enableContribAndExtras = true;
-  # };
+{ ... }: {
+  home.file."xmonad.hs" = {
+    source = ./xmonad.hs;
+    target = ".xmonad/xmonad.hs";
+  };
 }
