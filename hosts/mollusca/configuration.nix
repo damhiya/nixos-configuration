@@ -17,7 +17,7 @@ in {
     ../../mixins/locale.nix
     ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix
-    ../../mixins/neovim.nix
+    ../../mixins/neovim
     ../../mixins/breeze.nix
     ./hardware-configuration.nix
 
