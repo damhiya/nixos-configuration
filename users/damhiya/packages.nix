@@ -27,7 +27,7 @@
     zathura
     libreoffice
     pdfpc
-    mendeley
+    (mendeley.override { qtwebkit = null; })
 
     # media
     ffmpeg
