@@ -47,9 +47,9 @@ myStartupHook = do
   spawn . unlines $
     [ "MONITORS=\"$(xrandr | awk \'/\\<connected\\>/{print $1}\')\""
     , "if echo $MONITORS | grep -wq \'DP-2\' ; then"
-    , "  xrandr --output \'eDP-1-1\' --primary --output \'DP-2\' --right-of \'eDP-1-1\'"
+    , "  xrandr --output \'DP-4\' --primary --output \'DP-2\' --right-of \'DP-4\'"
     , "else"
-    , "  xrandr --output \'eDP-1-1\' --primary"
+    , "  xrandr --output \'DP-4\' --primary"
     , "fi"
     , "systemctl --user restart polybar.service"
     , "feh --bg-fill ~/Pictures/wallpaper"
