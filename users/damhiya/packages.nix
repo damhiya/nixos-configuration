@@ -13,7 +13,6 @@
     julia-bin
     nasm
     smlnj
-    mercury
     teyjus
     rustup
     loc
