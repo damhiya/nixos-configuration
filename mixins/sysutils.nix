@@ -18,6 +18,7 @@
     smartmontools
     htop
     neofetch
+    inxi
 
     # nix
     nixfmt
