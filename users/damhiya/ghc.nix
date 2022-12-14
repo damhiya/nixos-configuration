@@ -6,7 +6,7 @@ in {
     cabal-install
     hpack
     cabal2nix
-    (agda.withPackages (pkgs: with pkgs; [ standard-library ]))
+    (agda.withPackages (pkgs: with pkgs; [ standard-library cubical ]))
     haskellPackages.fix-whitespace
   ];
 }
