@@ -14,17 +14,17 @@
         default_category: Latin
         global_category_state: false
         global_hotkeys:
-          M-Backslash:
+          Super-Backslash:
             behavior:
               Mode: Math
             result: ConsumeIfProcessed
-          M-Space:
+          Super-Space:
             behavior:
               Toggle:
                 - Hangul
                 - Latin
             result: Consume
-          M-C-E:
+          Super-C-E:
             behavior:
               Mode: Emoji
             result: ConsumeIfProcessed
