@@ -28,6 +28,7 @@
     libreoffice
     pdfpc
     mendeley
+    zotero
 
     # media
     ffmpeg
