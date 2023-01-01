@@ -28,7 +28,7 @@ import Graphics.X11.ExtraTypes.XF86
 
 myNormalBorderColor   = "#FFFFFF"
 myFocusedBorderColor  = "#4646FA"
-myTerminal            = "termite -d \"$(xcwd)\""
+myTerminal            = "termite -e fish -d \"$(xcwd)\""
 myLayoutHook = lessBorders OnlyScreenFloat (avoidStruts tiled ||| noBorders Full)
   where
     tiled = space $ Tall nmaster delta ratio

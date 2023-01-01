@@ -3,7 +3,6 @@
     isNormalUser = true;
     home = "/home/damhiya";
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "docker" "vboxusers" ];
-    shell = pkgs.fish;
   };
 
   home-manager.users.damhiya = {
