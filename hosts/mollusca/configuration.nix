@@ -34,6 +34,17 @@ in {
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   programs.light.enable = true;
+
+  # graphics
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    prime = {
+      sync.enable = true;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
@@ -45,13 +56,6 @@ in {
       pkgs.vaapiVdpau             # "vdpau"
       pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
-  };
-
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.prime = {
-    sync.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
   };
 
   hardware.opentabletdriver.enable = true;
@@ -121,7 +125,6 @@ in {
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver = {
     enable = true;
     xrandrHeads = [ "eDP-1-1" "DP-2" ];
