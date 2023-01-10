@@ -135,6 +135,8 @@ in {
       accelProfile = "flat";
       accelSpeed = "1.0";
     };
+    autoRepeatDelay = 165;
+    autoRepeatInterval = 50;
     displayManager = {
       lightdm.enable = true;
       setupCommands = ''
