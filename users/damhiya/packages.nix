@@ -53,6 +53,7 @@
     pavucontrol
     dolphin
     obsidian
+    silver-searcher
     bat
     delta
     duf
