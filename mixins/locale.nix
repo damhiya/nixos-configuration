@@ -3,7 +3,7 @@
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
       enabled = "kime";
-      kime.config.icon_color = "White";
+      kime.iconColor = "White";
     };
   };
   time.timeZone = "Asia/Seoul";
