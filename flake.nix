@@ -9,15 +9,17 @@
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    kmonad.url = "github:kmonad/kmonad?dir=nix";
+    kmonad.inputs.nixpkgs.follows = "nixpkgs";
     iosevka-custom.url = "github:damhiya/iosevka-custom";
     notsodeep-overlay.url = "github:damhiya/notsodeep-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay
+  outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay, kmonad
     , iosevka-custom, notsodeep-overlay }:
     let
       baseModule = {
-        imports = [ home-manager.nixosModules.home-manager ];
+        imports = [ home-manager.nixosModules.home-manager kmonad.nixosModules.default ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         nix.registry.nixos.flake = nixpkgs;
         nixpkgs.overlays = [
