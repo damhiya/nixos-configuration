@@ -2,7 +2,10 @@
   programs.foot = {
     enable = true;
     settings = {
-      main = { font = "Iosevka Fixed:size=11"; };
+      main = {
+        shell = "fish";
+        font = "Iosevka Fixed:size=11";
+      };
       colors = {
         alpha = "1.0";
         foreground = "ffffff";

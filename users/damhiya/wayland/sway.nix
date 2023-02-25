@@ -49,7 +49,7 @@
         "${modifier}+R" = "reload";
 
         "${modifier}+Shift+Return" = "exec foot";
-        "${modifier}+P" = "exec fuzzel -w 80 -l 15 -f IosevkaTerm:size=15 -b fdf6e3ff -s eee8d5ff";
+        "${modifier}+P" = "exec fuzzel -w 80 -l 15 -f Iosevka:size=15 -b fdf6e3ff -s eee8d5ff";
 
         "XF86MonBrightnessUp" = "exec light -A 10";
         "XF86MonBrightnessDown" = "exec light -U 10";
@@ -60,7 +60,7 @@
 
       startup = [
         { command = "kime"; }
-        { command = "swaybg -m fill -i ~/Pictures/background.png"; }
+        { command = "swaybg -m fill -i ~/Pictures/wallpaper"; }
       ];
 
       input = {
@@ -76,7 +76,7 @@
           accel_profile = "flat";
           pointer_accel = "0.5";
         };
-      }."${config.networking.hostName}";
+      }."mollusca";
 
       output = {
         lambdaPi = {
@@ -84,9 +84,10 @@
           DP-1 = { scale = "1.56"; };
         };
         mollusca = {
-          eDP-1 = { scale = "1.4"; pos = "0 0"; };
+          eDP-1 = { mode = "2560x1600@60.002Hz"; scale = "1.5"; pos = "0 0"; };
+          DP-6 = { mode = "3840x2160@59.997Hz"; scale = "1.5"; };
         };
-      }."${config.networking.hostName}";
+      }."mollusca";
     };
   };
 }
