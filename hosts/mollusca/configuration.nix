@@ -64,7 +64,7 @@ in {
       # vdpau
       pkgs.libvdpau
       # vaapi
-      # pkgs.intel-media-driver     # "iHD"
+      pkgs.intel-media-driver     # "iHD"
       pkgs.vaapiVdpau             # "vdpau"
       pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
@@ -101,7 +101,7 @@ in {
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    # LIBVA_DRIVER_NAME = "iHD";
+    LIBVA_DRIVER_NAME = "iHD";
     BROWSER = "firefox";
     MOZ_USE_XINPUT2 = "1";
   };
