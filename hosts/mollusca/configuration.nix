@@ -10,19 +10,7 @@ in {
     ../../mixins/home-manager.nix
     ../../mixins/defaultPackages.nix
     ../../mixins/sysutils.nix
-    # ../../mixins/pipewire.nix
-    ({ pkgs, ... }: {
-      sound.enable = true;
-      hardware.pulseaudio = {
-        enable = true;
-        support32Bit = true;
-        package = pkgs.pulseaudioFull;
-      };
-      environment.systemPackages = with pkgs; [
-        pulsemixer
-        pamixer
-      ];
-    })
+    ../../mixins/pipewire.nix
     ../../mixins/bluetooth.nix
     ../../mixins/android-file-transfer.nix
     ../../mixins/compilers.nix
