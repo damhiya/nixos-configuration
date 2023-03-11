@@ -90,8 +90,7 @@
           word_commit: false
           preedit_johab: Needed
           addons:
-            all:
-            - ComposeChoseongSsang
+            all: []
             dubeolsik:
             - TreatJongseongAsChoseong
     '';
