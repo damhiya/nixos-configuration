@@ -1,20 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    # ocaml & coq
-    coq_8_16
-
-    # lean
-    elan
-
     # development
-    twelf
-    # ocamlPackages.elpi
-    chez
     julia-bin
-    nasm
-    smlnj
-    teyjus
-    rustup
     loc
     gnuplot
     neovide
@@ -57,8 +44,6 @@
     bat
     delta
     duf
-    ranger
-    joshuto
     filelight
     waifu2x-converter-cpp
     osu-lazer
