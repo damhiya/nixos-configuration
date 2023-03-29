@@ -13,7 +13,6 @@ in {
     ../../mixins/pipewire.nix
     ../../mixins/bluetooth.nix
     ../../mixins/android-file-transfer.nix
-    ../../mixins/compilers.nix
     ../../mixins/locale.nix
     ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix

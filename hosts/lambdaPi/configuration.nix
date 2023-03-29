@@ -11,7 +11,6 @@ in {
     ../../mixins/defaultPackages.nix
     ../../mixins/sysutils.nix
     ../../mixins/android-file-transfer.nix
-    ../../mixins/compilers.nix
     ../../mixins/locale.nix
     ../../mixins/fonts.nix
     ../../mixins/notsodeep.nix
