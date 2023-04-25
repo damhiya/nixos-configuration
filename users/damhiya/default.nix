@@ -20,6 +20,9 @@
 
     home.username = "damhiya";
     home.homeDirectory = "/home/damhiya";
+    home.sessionVariables = {
+      WINIT_X11_SCALE_FACTOR = "2.0";
+    };
     home.stateVersion = "22.05";
   };
 }
