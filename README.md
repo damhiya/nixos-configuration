@@ -1,7 +1,7 @@
 # damhiya's NixOS system configuration
 
 ## Some subtleties
-* It is recommended to add some substituters. See `modules/nix.nix`.
+* The flake overrides substituters. See `nixConfig` option in `flake.nix`.
 * The build process may fail due to memory shortage. This is because nix tries to build
   multiple iosevka packages in parallel. Run `build-iosevka.sh` to build these packages
   sequentially.
