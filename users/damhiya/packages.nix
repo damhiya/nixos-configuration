@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # development
-    julia-bin
+    julia
     loc
     gnuplot
     neovide
