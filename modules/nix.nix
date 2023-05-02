@@ -7,11 +7,9 @@
     '';
     settings = {
       trusted-users = [ "root" "@wheel" ];
-      substituters = [
+      trusted-substituters = [
         "https://nix-community.cachix.org"
         "https://nixpkgs-wayland.cachix.org"
-      ];
-      trusted-substituters = [
         "https://cache.iog.io"
       ];
       trusted-public-keys = [
