@@ -6,18 +6,18 @@
 let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
-    ../../mixins/nix.nix
-    ../../mixins/home-manager.nix
-    ../../mixins/defaultPackages.nix
-    ../../mixins/sysutils.nix
-    ../../mixins/pipewire.nix
-    ../../mixins/bluetooth.nix
-    ../../mixins/android-file-transfer.nix
-    ../../mixins/locale.nix
-    ../../mixins/fonts.nix
-    ../../mixins/notsodeep.nix
-    ../../mixins/neovim
-    ../../mixins/breeze.nix
+    ../../modules/nix.nix
+    ../../modules/home-manager.nix
+    ../../modules/defaultPackages.nix
+    ../../modules/sysutils.nix
+    ../../modules/pipewire.nix
+    ../../modules/bluetooth.nix
+    ../../modules/android-file-transfer.nix
+    ../../modules/locale.nix
+    ../../modules/fonts.nix
+    ../../modules/notsodeep.nix
+    ../../modules/neovim
+    ../../modules/breeze.nix
     ./hardware-configuration.nix
 
     ../../users/damhiya

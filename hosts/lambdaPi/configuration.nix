@@ -6,15 +6,15 @@
 let commonPackages = import ../../common/commonPackages.nix pkgs;
 in {
   imports = [
-    ../../mixins/nix.nix
-    ../../mixins/home-manager.nix
-    ../../mixins/defaultPackages.nix
-    ../../mixins/sysutils.nix
-    ../../mixins/android-file-transfer.nix
-    ../../mixins/locale.nix
-    ../../mixins/fonts.nix
-    ../../mixins/notsodeep.nix
-    ../../mixins/neovim
+    ../../modules/nix.nix
+    ../../modules/home-manager.nix
+    ../../modules/defaultPackages.nix
+    ../../modules/sysutils.nix
+    ../../modules/android-file-transfer.nix
+    ../../modules/locale.nix
+    ../../modules/fonts.nix
+    ../../modules/notsodeep.nix
+    ../../modules/neovim
     ./hardware-configuration.nix
 
     ../../users/damhiya
