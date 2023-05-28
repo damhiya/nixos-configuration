@@ -26,6 +26,7 @@
     nomacs
 
     # networking
+    microsoft-edge
     youtube-dl
     tor-browser-bundle-bin
     zulip
