@@ -40,17 +40,63 @@ myLayoutHook = lessBorders OnlyScreenFloat (avoidStruts tiled ||| noBorders Full
 myWorkspaces          = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"] 
 myModMask             = mod1Mask
 
+myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
+  [ ((modMask .|. shiftMask, xK_Return), spawn $ terminal conf)
+  , ((modMask,               xK_p     ), spawn "rofi -font \"Iosevka 24\" -show drun")
+  , ((modMask .|. shiftMask, xK_c     ), kill)
+
+  -- , ((modMask,               xK_space ), sendMessage NextLayout)
+  , ((modMask,               xK_Return), sendMessage NextLayout)
+  , ((modMask .|. shiftMask, xK_space ), setLayout $ layoutHook conf)
+
+  , ((modMask,               xK_Tab   ), windows W.focusDown)
+  , ((modMask .|. shiftMask, xK_Tab   ), windows W.focusUp  )
+  , ((modMask,               xK_j     ), windows W.focusDown)
+  , ((modMask,               xK_k     ), windows W.focusUp  )
+  , ((modMask,               xK_m     ), windows W.focusMaster  )
+
+  -- , ((modMask,               xK_Return), windows W.swapMaster)
+  , ((modMask .|. shiftMask, xK_j     ), windows W.swapDown  )
+  , ((modMask .|. shiftMask, xK_k     ), windows W.swapUp    )
+
+  , ((modMask,               xK_h     ), sendMessage Shrink)
+  , ((modMask,               xK_l     ), sendMessage Expand)
+
+  , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
+
+  , ((modMask              , xK_comma ), sendMessage (IncMasterN 1))
+  , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
+
+  , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)
+  , ((modMask              , xK_q     ), restartXMonad)
+
+  , ((0                    , xF86XK_AudioLowerVolume), spawn "pamixer -d 3")
+  , ((0                    , xF86XK_AudioRaiseVolume), spawn "pamixer -i 3")
+  , ((0                    , xF86XK_AudioMute       ), spawn "pamixer -t")
+
+  , ((0                    , xF86XK_MonBrightnessUp   ), spawn "light -A 10")
+  , ((0                    , xF86XK_MonBrightnessDown ), spawn "light -U 10")
+
+  , ((modMask              , xK_Print ), spawn "import -window root ~/Pictures/Screenshots/screenshot.png")
+  ]
+  ++ [((modMask              , k), windows (W.greedyView i))
+      | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
+  ++ [((modMask .|. shiftMask, k), windows $ W.shift      i) | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
+
+  ++
+  [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+      | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+      , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+  where
+    restartXMonad :: X ()
+    restartXMonad = spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
+
 myBorderWidth         = 10
 
 myStartupHook :: X ()
 myStartupHook = do
   spawn . unlines $
-    [ "MONITORS=\"$(xrandr | awk \'/\\<connected\\>/{print $1}\')\""
-    , "if echo $MONITORS | grep -wq \'DP-2\' ; then"
-    , "  xrandr --output \'eDP-1-1\' --primary --output \'DP-2\' --right-of \'eDP-1-1\'"
-    , "else"
-    , "  xrandr --output \'eDP-1-1\' --primary"
-    , "fi"
+    [ "autorandr --change --skip-option crtc"
     , "systemctl --user restart polybar.service"
     , "feh --bg-fill ~/Pictures/wallpaper"
     ]
@@ -61,79 +107,27 @@ myStartupHook = do
 myFocusFollowsMouse   = True
 myClickJustFocuses    = False
 
-restartXMonad :: X ()
-restartXMonad = spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
+myConfig = ewmhFullscreen . ewmh . docks $ def
+  { normalBorderColor  = myNormalBorderColor
+  , focusedBorderColor = myFocusedBorderColor
+  , terminal           = myTerminal
+  , layoutHook         = myLayoutHook
+  -- , manageHook         = myManageHook
+  -- , handleEventHook    = myHandleEventHook
+  , workspaces         = myWorkspaces
+  , modMask            = myModMask
+  , keys               = myKeys
+  -- , mouseBindings      = myMouseBindings
+  , borderWidth        = myBorderWidth
+  -- , logHook            = myLogHook
+  , startupHook        = myStartupHook
+  , focusFollowsMouse  = myFocusFollowsMouse
+  , clickJustFocuses   = myClickJustFocuses
+  -- , clientMask         = myClientMask
+  -- , rootMask           = myRootMask
+  -- , handleExtraArgs    = myHandleExtraArgs
+  -- , extensibleConf     = myExtensibleConf
+  }
 
 main :: IO ()
-main = do
-  let
-    { myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
-        [ ((modMask .|. shiftMask, xK_Return), spawn $ terminal conf)
-        , ((modMask,               xK_p     ), spawn "rofi -font \"monospace 24\" -show run")
-        , ((modMask .|. shiftMask, xK_c     ), kill)
-
-        -- , ((modMask,               xK_space ), sendMessage NextLayout)
-        , ((modMask,               xK_Return), sendMessage NextLayout)
-        , ((modMask .|. shiftMask, xK_space ), setLayout $ layoutHook conf)
-
-        , ((modMask,               xK_Tab   ), windows W.focusDown)
-        , ((modMask .|. shiftMask, xK_Tab   ), windows W.focusUp  )
-        , ((modMask,               xK_j     ), windows W.focusDown)
-        , ((modMask,               xK_k     ), windows W.focusUp  )
-        , ((modMask,               xK_m     ), windows W.focusMaster  )
-
-        -- , ((modMask,               xK_Return), windows W.swapMaster)
-        , ((modMask .|. shiftMask, xK_j     ), windows W.swapDown  )
-        , ((modMask .|. shiftMask, xK_k     ), windows W.swapUp    )
-
-        , ((modMask,               xK_h     ), sendMessage Shrink)
-        , ((modMask,               xK_l     ), sendMessage Expand)
-
-        , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
-
-        , ((modMask              , xK_comma ), sendMessage (IncMasterN 1))
-        , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
-
-        , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)
-        , ((modMask              , xK_q     ), restartXMonad)
-
-        , ((0                    , xF86XK_AudioLowerVolume), spawn "pamixer -d 3")
-        , ((0                    , xF86XK_AudioRaiseVolume), spawn "pamixer -i 3")
-        , ((0                    , xF86XK_AudioMute       ), spawn "pamixer -t")
-
-        , ((0                    , xF86XK_MonBrightnessUp   ), spawn "light -A 10")
-        , ((0                    , xF86XK_MonBrightnessDown ), spawn "light -U 10")
-
-        , ((modMask              , xK_Print ), spawn "import -window root ~/Pictures/Screenshots/screenshot.png")
-        ]
-        ++ [((modMask              , k), windows (W.greedyView i))
-            | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
-        ++ [((modMask .|. shiftMask, k), windows $ W.shift      i) | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
-
-        ++
-        [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-            | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-            , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
-
-    ; myConfig = ewmhFullscreen . ewmh . docks $ def
-        { normalBorderColor  = myNormalBorderColor
-        , focusedBorderColor = myFocusedBorderColor
-        , terminal           = myTerminal
-        , layoutHook         = myLayoutHook
-    --     , manageHook         = myManageHook
-    --     , handleEventHook    = myHandleEventHook
-        , workspaces         = myWorkspaces
-        , modMask            = myModMask
-        , keys               = myKeys
-    --     , mouseBindings      = myMouseBindings
-        , borderWidth        = myBorderWidth
-    --    , logHook            = myLogHook
-        , startupHook        = myStartupHook
-        , focusFollowsMouse  = myFocusFollowsMouse
-        , clickJustFocuses   = myClickJustFocuses
-    --     , rootMask           = myRootMask
-    --     , handleExtraArgs    = myHandleExtraArgs
-        }
-    }
-
-  xmonad myConfig
+main = xmonad myConfig
