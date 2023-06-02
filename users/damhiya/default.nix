@@ -9,7 +9,7 @@
     imports = [
       ./shell.nix
       ./git.nix
-      ./emacs.nix
+      ./emacs
       ./direnv.nix
       ./ghc.nix
       ./packages.nix
