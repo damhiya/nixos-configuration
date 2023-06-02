@@ -14,7 +14,7 @@
       ./ghc.nix
       ./packages.nix
       ./programs.nix
-      ./kime.nix
+      ./kime
       ./x11
     ];
 
