@@ -8,13 +8,13 @@ import System.Directory
 import System.Environment
 
 import Data.String
-import qualified Data.Map                 as M
+import Data.Map qualified as M
 
 import Control.Monad
 
 -- xmonad
 import XMonad
-import qualified XMonad.StackSet as W
+import XMonad.StackSet qualified as W
 
 -- xmonad-contrib
 import XMonad.Hooks.EwmhDesktops
@@ -77,6 +77,7 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   , ((0                    , xF86XK_MonBrightnessUp   ), spawn "light -A 10")
   , ((0                    , xF86XK_MonBrightnessDown ), spawn "light -U 10")
 
+  , ((0                    , xK_Print ), withFocused (\w -> spawn ("import -border -screen -window " ++ show w ++ " ~/Pictures/Screenshots/screenshot.png")))
   , ((modMask              , xK_Print ), spawn "import -window root ~/Pictures/Screenshots/screenshot.png")
   ]
   ++ [((modMask              , k), windows (W.greedyView i))
