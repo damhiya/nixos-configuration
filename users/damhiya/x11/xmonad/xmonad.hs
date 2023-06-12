@@ -26,6 +26,36 @@ import XMonad.Layout.NoBorders
 -- X11
 import Graphics.X11.ExtraTypes.XF86
 
+-- actions
+restartXMonad :: X ()
+restartXMonad = spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
+
+captureWindow :: Window -> X ()
+captureWindow w = spawn ("import -border -screen -window " ++ show w ++ " ~/Pictures/Screenshots/screenshot.png")
+
+captureRoot :: X ()
+captureRoot = spawn "import -window root ~/Pictures/Screenshots/screenshot.png"
+
+type LightConfig = (String, Int)
+
+monitorBacklight :: LightConfig
+monitorBacklight = ("sysfs/backlight/intel_backlight", 10)
+
+keyboardBacklight :: LightConfig
+keyboardBacklight = ("sysfs/leds/tpacpi::kbd_backlight", 50)
+
+modifyLight :: LightConfig -> Bool -> X ()
+modifyLight (dev, step) True  = spawn ("light -s " ++ dev ++ " -A " ++ show step)
+modifyLight (dev, step) False = spawn ("light -s " ++ dev ++ " -U " ++ show step)
+
+modifyAudio :: Bool -> X ()
+modifyAudio True  = spawn "pamixer -i 3"
+modifyAudio False = spawn "pamixer -d 3"
+
+toggleAudio :: X ()
+toggleAudio = spawn "pamixer -t"
+
+-- my config
 myNormalBorderColor   = "#FFFFFF"
 myFocusedBorderColor  = "#4646FA"
 myTerminal            = "termite -e fish -d \"$(xcwd)\""
@@ -70,15 +100,17 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)
   , ((modMask              , xK_q     ), restartXMonad)
 
-  , ((0                    , xF86XK_AudioLowerVolume), spawn "pamixer -d 3")
-  , ((0                    , xF86XK_AudioRaiseVolume), spawn "pamixer -i 3")
-  , ((0                    , xF86XK_AudioMute       ), spawn "pamixer -t")
+  , ((0                    , xF86XK_AudioRaiseVolume), modifyAudio True)
+  , ((0                    , xF86XK_AudioLowerVolume), modifyAudio False)
+  , ((0                    , xF86XK_AudioMute       ), toggleAudio)
 
-  , ((0                    , xF86XK_MonBrightnessUp   ), spawn "light -A 10")
-  , ((0                    , xF86XK_MonBrightnessDown ), spawn "light -U 10")
+  , ((0                    , xF86XK_MonBrightnessUp   ), modifyLight monitorBacklight True)
+  , ((0                    , xF86XK_MonBrightnessDown ), modifyLight monitorBacklight False)
+  , ((shiftMask            , xF86XK_MonBrightnessUp   ), modifyLight keyboardBacklight True)
+  , ((shiftMask            , xF86XK_MonBrightnessDown ), modifyLight keyboardBacklight False)
 
-  , ((0                    , xK_Print ), withFocused (\w -> spawn ("import -border -screen -window " ++ show w ++ " ~/Pictures/Screenshots/screenshot.png")))
-  , ((modMask              , xK_Print ), spawn "import -window root ~/Pictures/Screenshots/screenshot.png")
+  , ((0                    , xK_Print ), withFocused captureWindow)
+  , ((modMask              , xK_Print ), captureRoot)
   ]
   ++ [((modMask              , k), windows (W.greedyView i))
       | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
@@ -88,9 +120,6 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
       | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
-  where
-    restartXMonad :: X ()
-    restartXMonad = spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
 
 myBorderWidth         = 10
 
