@@ -30,5 +30,6 @@
     tree
     tmux
     shellcheck
+    (pkgs.writeShellScriptBin "st" (builtins.readFile ../scripts/st.sh))
   ];
 }
