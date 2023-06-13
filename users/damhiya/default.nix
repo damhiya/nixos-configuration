@@ -16,6 +16,7 @@
       ./programs.nix
       ./kime
       ./x11
+      ./mimeApps.nix
     ];
 
     home.username = "damhiya";
