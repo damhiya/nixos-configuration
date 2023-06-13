@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # hardware maanagement
+    # hardware management
     efibootmgr
     pciutils
     usbutils
