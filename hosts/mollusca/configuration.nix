@@ -176,8 +176,11 @@ in {
         xrandr --output DP-2 --right-of eDP-1-1
       '';
     };
-    windowManager.xmonad.enable = true;
-    windowManager.xmonad.enableContribAndExtras = true;
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      extraPackages = hsPkgs: with hsPkgs; [ PyF ];
+    };
   };
 
   system.stateVersion = "22.05";

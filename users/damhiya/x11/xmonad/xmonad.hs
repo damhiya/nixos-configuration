@@ -1,3 +1,5 @@
+{-# LANGUAGE QuasiQuotes #-}
+
 module Main where
 
 import System.Posix.Types
@@ -11,6 +13,8 @@ import Data.String
 import Data.Map qualified as M
 
 import Control.Monad
+
+import PyF
 
 -- xmonad
 import XMonad
@@ -31,7 +35,7 @@ restartXMonad :: X ()
 restartXMonad = spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
 
 captureWindow :: Window -> X ()
-captureWindow w = spawn ("import -border -screen -window " ++ show w ++ " ~/Pictures/Screenshots/screenshot.png")
+captureWindow w = spawn [fmt|import -border -screen -window {w} ~/Pictures/Screenshots/screenshot.png|]
 
 captureRoot :: X ()
 captureRoot = spawn "import -window root ~/Pictures/Screenshots/screenshot.png"
@@ -45,8 +49,8 @@ keyboardBacklight :: LightConfig
 keyboardBacklight = ("sysfs/leds/tpacpi::kbd_backlight", 50)
 
 modifyLight :: LightConfig -> Bool -> X ()
-modifyLight (dev, step) True  = spawn ("light -s " ++ dev ++ " -A " ++ show step)
-modifyLight (dev, step) False = spawn ("light -s " ++ dev ++ " -U " ++ show step)
+modifyLight (dev, step) True  = spawn [fmt|light -s {dev} -A {step}|]
+modifyLight (dev, step) False = spawn [fmt|light -s {dev} -U {step}|]
 
 modifyAudio :: Bool -> X ()
 modifyAudio True  = spawn "pamixer -i 3"
