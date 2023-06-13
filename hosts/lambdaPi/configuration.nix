@@ -13,7 +13,7 @@ in {
     ../../modules/android-file-transfer.nix
     ../../modules/locale.nix
     ../../modules/fonts.nix
-    ../../modules/notsodeep.nix
+    ../../modules/networking.nix
     ../../modules/neovim
     ./hardware-configuration.nix
 
@@ -61,17 +61,6 @@ in {
 
   networking = {
     hostName = "lambdaPi";
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
-    wireless.enable = true;
-    wireless.interfaces = [ "wlp2s0" ];
-    interfaces.wlp2s0.useDHCP = true;
-    firewall.enable = true;
-    firewall.allowedTCPPorts = [ 80 443 ];
-    firewall.extraCommands = ''
-      iptables -A INPUT -p tcp --tcp-flags SYN,ACK SYN,ACK --sport 443 -j NFQUEUE --queue-num 200 --queue-bypass
-      iptables -t raw -I PREROUTING -p tcp --sport 443 --tcp-flags SYN,ACK SYN,ACK -j NFQUEUE --queue-num 200 --queue-bypass
-      iptables -t raw -I PREROUTING -p tcp --sport 80 --tcp-flags SYN,ACK SYN,ACK -j NFQUEUE --queue-num 200 --queue-bypass
-    '';
   };
 
   console.keyMap = "us";
