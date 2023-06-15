@@ -26,10 +26,12 @@
     kmonad.inputs.nixpkgs.follows = "nixpkgs";
     iosevka-custom.url = "github:damhiya/iosevka-custom";
     notsodeep-overlay.url = "github:damhiya/notsodeep-overlay";
+    hhg-overlay.url = "github:damhiya/hhg-overlay";
+    hhg-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay, kmonad
-    , iosevka-custom, notsodeep-overlay }:
+    , iosevka-custom, notsodeep-overlay, hhg-overlay }:
     let
       baseModule = {
         imports = [ home-manager.nixosModules.home-manager kmonad.nixosModules.default ];
@@ -40,6 +42,7 @@
           emacs-overlay.overlays.default
           iosevka-custom.overlays.default
           notsodeep-overlay.overlays.default
+          hhg-overlay.overlays.default
         ];
       };
     in {

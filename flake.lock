@@ -110,6 +110,45 @@
         "type": "github"
       }
     },
+    "happy-hacking-gnu-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1682425107,
+        "narHash": "sha256-bCV1W8/6ths8igZg9nxFZuYDGuKMSGxJmg6c1PJxuGY=",
+        "ref": "refs/heads/master",
+        "rev": "0045faf17c8e3fd51f114124ed7eef51d3c97bb0",
+        "revCount": 33,
+        "submodules": true,
+        "type": "git",
+        "url": "https://gitlab.com/dom/happy-hacking-gnu.git?%3frev=85dfbba4cfc11a34f2dd8e984e9d46112f04a7e1"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://gitlab.com/dom/happy-hacking-gnu.git?%3frev=85dfbba4cfc11a34f2dd8e984e9d46112f04a7e1"
+      }
+    },
+    "hhg-overlay": {
+      "inputs": {
+        "happy-hacking-gnu-src": "happy-hacking-gnu-src",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1686841510,
+        "narHash": "sha256-TZP02zKHKUEtHubL6/SuYOtGPW/cRtTKqjqwX7HD54k=",
+        "owner": "damhiya",
+        "repo": "hhg-overlay",
+        "rev": "da9cc9a11b60ebd15baa78d77d90a77fbf43251b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "damhiya",
+        "repo": "hhg-overlay",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -349,6 +388,7 @@
     "root": {
       "inputs": {
         "emacs-overlay": "emacs-overlay",
+        "hhg-overlay": "hhg-overlay",
         "home-manager": "home-manager",
         "iosevka-custom": "iosevka-custom",
         "kmonad": "kmonad",

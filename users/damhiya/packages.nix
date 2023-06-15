@@ -38,6 +38,7 @@
     qbittorrent
 
     # others
+    happy-hacking-gnu
     pavucontrol
     dolphin
     obsidian
