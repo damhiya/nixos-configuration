@@ -30,11 +30,14 @@
     hhg-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay, kmonad
-    , iosevka-custom, notsodeep-overlay, hhg-overlay }:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-wayland, emacs-overlay
+    , kmonad, iosevka-custom, notsodeep-overlay, hhg-overlay }:
     let
       baseModule = {
-        imports = [ home-manager.nixosModules.home-manager kmonad.nixosModules.default ];
+        imports = [
+          home-manager.nixosModules.home-manager
+          kmonad.nixosModules.default
+        ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         nix.registry.nixos.flake = nixpkgs;
         nixpkgs.overlays = [
@@ -43,6 +46,10 @@
           iosevka-custom.overlays.default
           notsodeep-overlay.overlays.default
           hhg-overlay.overlays.default
+          (final: prev: {
+            st =
+              prev.writeShellScriptBin "st" (builtins.readFile ./scripts/st.sh);
+          })
         ];
       };
     in {
