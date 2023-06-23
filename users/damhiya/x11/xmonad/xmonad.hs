@@ -49,12 +49,12 @@ keyboardBacklight :: LightConfig
 keyboardBacklight = ("sysfs/leds/tpacpi::kbd_backlight", 50)
 
 modifyLight :: LightConfig -> Bool -> X ()
-modifyLight (dev, step) True  = spawn [fmt|light -s {dev} -A {step}|]
-modifyLight (dev, step) False = spawn [fmt|light -s {dev} -U {step}|]
+modifyLight (dev, step) b = spawn [fmt|light -s {dev} -{inc} {step}|]
+  where inc = if b then 'A' else 'U'
 
 modifyAudio :: Bool -> X ()
-modifyAudio True  = spawn "pamixer -i 3"
-modifyAudio False = spawn "pamixer -d 3"
+modifyAudio b = spawn [fmt|pamixer -{inc} 3|]
+  where inc = if b then 'i' else 'd'
 
 toggleAudio :: X ()
 toggleAudio = spawn "pamixer -t"
