@@ -50,6 +50,18 @@
             st =
               prev.writeShellScriptBin "st" (builtins.readFile ./scripts/st.sh);
           })
+          (if nixpkgs.rev == "e18dc963075ed115afb3e312b64643bf8fd4b474" then
+            final: prev: {
+              zoom-us = prev.zoom-us.overrideAttrs (_: rec {
+                version = "5.15.2.4260";
+                src = prev.fetchurl {
+                  url = "https://zoom.us/client/${version}/zoom_x86_64.pkg.tar.xz";
+                  hash = "sha256-R6M180Gcqu4yZC+CtWnixSkjPe8CvgoTPWSz7B6ZAlE=";
+                };
+              });
+            }
+          else
+            abort "please update zoom-us overlay")
         ];
       };
     in {
