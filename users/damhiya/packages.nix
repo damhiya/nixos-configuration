@@ -38,6 +38,7 @@
     qbittorrent
 
     # others
+    cool-retro-term
     happy-hacking-gnu
     pavucontrol
     dolphin
