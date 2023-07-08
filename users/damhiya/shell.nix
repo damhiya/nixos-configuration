@@ -2,7 +2,7 @@
   home.shellAliases = {
     grep = "grep --color";
     emc = "emacsclient -nc";
-    nv = "neovide";
+    nv = "neovide --multigrid";
   };
 
   programs.fish = {
