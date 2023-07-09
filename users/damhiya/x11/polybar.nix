@@ -24,7 +24,7 @@
       "module/date" = {
         type = "internal/date";
         date = "%F";
-        time = "%T";
+        time = "%l:%M:%S %p %Z";
         label = "%date% %time%";
       };
       "module/battery" = {
