@@ -16,6 +16,7 @@
     pdfpc
     mendeley
     zotero
+    pdfgrep
 
     # media
     ffmpeg
