@@ -25,12 +25,18 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.consoleMode = "1";
-  boot.loader.systemd-boot.editor = false;
-  boot.supportedFilesystems = [ "ntfs" "zfs" ];
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  boot = {
+    loader.systemd-boot = {
+      enable = true;
+      editor = false;
+    };
+    supportedFilesystems = [ "ntfs" "zfs" ];
+    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+    kernelParams = [
+      # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/256
+      "ibt=off"
+    ];
+  };
 
   programs.light.enable = true;
 
