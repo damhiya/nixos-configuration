@@ -47,8 +47,12 @@
           notsodeep-overlay.overlays.default
           hhg-overlay.overlays.default
           (final: prev: {
-            st =
-              prev.writeShellScriptBin "st" (builtins.readFile ./scripts/st.sh);
+            scripts = {
+              st = prev.writeShellScriptBin "st"
+                (builtins.readFile ./scripts/st.sh);
+              nixos-profile = prev.writeShellScriptBin "nixos-profile"
+                (builtins.readFile ./scripts/nixos-profile.sh);
+            };
           })
         ];
       };

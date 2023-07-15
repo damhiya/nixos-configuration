@@ -30,6 +30,8 @@
     tree
     tmux
     shellcheck
-    st
+    jq
+    scripts.st
+    scripts.nixos-profile
   ];
 }
