@@ -44,7 +44,6 @@ list() {
 # remove
 remove_single() {
   num=$1
-  nums=$(get_list)
   current=$(get_current)
   if [ "$num" = "$current" ] ; then
     echo "You should not remove current profile $current"
