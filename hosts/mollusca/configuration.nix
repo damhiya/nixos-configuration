@@ -124,7 +124,7 @@ in {
             tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
             lctl a    s    d    f    g    h    j    k    l    ;    '         ret
             lsft z    x    c    v    b    n    m    ,    .    /              rsft
-                 lctl lmet lalt           spc            ralt sys  rctl pgdn up   pgup
+                 lctl lalt lmet           spc            ralt sys  rctl pgdn up   pgup
                                                                         left down rght
         )
       '';
