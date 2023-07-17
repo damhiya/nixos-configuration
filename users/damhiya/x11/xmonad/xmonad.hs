@@ -72,7 +72,7 @@ myLayoutHook = lessBorders OnlyScreenFloat (avoidStruts tiled ||| noBorders Full
     ratio   = 1/2
 
 myWorkspaces          = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"] 
-myModMask             = mod1Mask
+myModMask             = mod4Mask
 
 myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return), spawn $ terminal conf)
