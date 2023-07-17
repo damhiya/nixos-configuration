@@ -32,12 +32,13 @@ list() {
                      )
       info="NixOS       $nixosVersion (Linux $kernelVersion)"
     fi
+    cfg=$("$link/sw/bin/nixos-version" --configuration-revision)
     if [ "$num" = "$current" ] ; then
       cur="*"
     else
       cur=" "
     fi
-    echo "$cur $num   $date   $info"
+    echo "$cur $num   $date   $info configRev=$cfg"
   done
 }
 
