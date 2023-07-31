@@ -23,7 +23,7 @@
       };
       "module/date" = {
         type = "internal/date";
-        date = "%F";
+        date = "%F %a";
         time = "%l:%M:%S %p %Z";
         label = "%date% %time%";
       };
