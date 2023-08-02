@@ -25,6 +25,7 @@
     gcolor2
     mpv
     nomacs
+    cmus
 
     # networking
     microsoft-edge
