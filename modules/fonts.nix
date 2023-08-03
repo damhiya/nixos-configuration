@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  fonts.fonts = with pkgs;
+  fonts.packages = with pkgs;
     builtins.attrValues iosevka-custom ++ [
       (nerdfonts.override { fonts = [ "Iosevka" ]; })
       stix-two
