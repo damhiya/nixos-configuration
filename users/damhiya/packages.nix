@@ -3,7 +3,6 @@
     # development
     julia
     loc
-    gnuplot
     neovide
 
     # document
