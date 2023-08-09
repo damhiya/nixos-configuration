@@ -13,8 +13,8 @@
     zathura
     libreoffice
     pdfpc
-    mendeley
     zotero
+    calibre
     pdfgrep
 
     # media
