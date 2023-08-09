@@ -37,6 +37,7 @@
     qbittorrent
 
     # others
+    bitwarden
     cool-retro-term
     happy-hacking-gnu
     pavucontrol
