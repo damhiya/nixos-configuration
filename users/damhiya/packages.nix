@@ -8,7 +8,6 @@
     # document
     texlive.combined.scheme-full
     python3Packages.pygments
-    pandoc
     okular
     zathura
     libreoffice
