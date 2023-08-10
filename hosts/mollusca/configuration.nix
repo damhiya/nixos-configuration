@@ -36,6 +36,8 @@ in {
     kernelParams = [
       # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/256
       "ibt=off"
+      # Prevent hanging while rebooting
+      "reboot=acpi"
     ];
   };
 
