@@ -21,7 +21,6 @@ in {
     ../../modules/networking.nix
     ../../modules/neovim
     ../../modules/breeze.nix
-    ../../modules/xinput.nix
     ./hardware-configuration.nix
 
     ../../users/damhiya
@@ -45,6 +44,10 @@ in {
   };
 
   programs.light.enable = true;
+  programs.hyprland = {
+    enable = true;
+    enableNvidiaPatches = true;
+  };
 
   # graphics
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -90,8 +93,17 @@ in {
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     LIBVA_DRIVER_NAME = "iHD";
+    # WLR_RENDERER = "vulkan";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    EGL_PLATFORM = "wayland";
+    SDL_VIDEODRIVER = "wayland";
+    GDK_BACKEND = "wayland";
+    # GBM_BACKEND = "nvidia-drm";
     BROWSER = "firefox";
+    MOZ_ENABLE_WAYLAND = "1";
     MOZ_USE_XINPUT2 = "1";
+    NIXOS_OZONE_WL = "1";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
   programs.dconf.enable = true;
   programs.gnupg.agent = {
@@ -136,28 +148,6 @@ in {
         )
       '';
     };
-  };
-
-  # Use `systemctl restart display-manager.service` after system switch to take effect of new config
-  # See log at /var/log/X.0.log
-  services.xserver = {
-    enable = true;
-    xrandrHeads = [ "eDP-1-1" "DP-2" ];
-    dpi = 150;
-    displayManager = {
-      lightdm.enable = true;
-      setupCommands = ''
-        xrandr --output eDP-1-1 --primary
-        xrandr --output DP-2 --right-of eDP-1-1
-      '';
-    };
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      extraPackages = hsPkgs: with hsPkgs; [ PyF ];
-    };
-    # View current xorg configuration at /etc/X11/xorg.conf
-    exportConfiguration = true;
   };
 
   system.stateVersion = "22.05";

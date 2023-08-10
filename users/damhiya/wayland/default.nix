@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  imports = [ ./sway.nix ./programs.nix ./foot.nix ];
+  imports = [ ./programs.nix ./foot.nix ];
 }
