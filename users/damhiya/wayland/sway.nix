@@ -84,8 +84,9 @@
           DP-1 = { scale = "1.56"; };
         };
         mollusca = {
-          eDP-1 = { mode = "2560x1600@60.002Hz"; scale = "1.5"; pos = "0 0"; };
-          DP-6 = { mode = "3840x2160@59.997Hz"; scale = "1.5"; };
+          eDP-1 = { mode = "2560x1600@165.004Hz"; scale = "1.5"; pos = "0 0"; };
+          DP-2 = { mode = "3840x2160@59.997Hz"; scale = "1.5"; }; # discrete gpu mode
+          DP-6 = { mode = "3840x2160@59.997Hz"; scale = "1.5"; }; # hybrid mode
         };
       }."mollusca";
     };
