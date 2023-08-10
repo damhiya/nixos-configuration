@@ -10,6 +10,7 @@ in {
     ../../modules/home-manager.nix
     ../../modules/defaultPackages.nix
     ../../modules/sysutils.nix
+    ../../modules/power.nix
     ../../modules/pipewire.nix
     ../../modules/bluetooth.nix
     ../../modules/android-file-transfer.nix
@@ -89,7 +90,6 @@ in {
   };
   programs.dconf.enable = true;
   services.openssh.enable = true;
-  services.thermald.enable = true;
   services.printing.enable = true;
   services.fprintd.enable = true;
   services.zfs.autoScrub.enable = true;
