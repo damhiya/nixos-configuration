@@ -3,19 +3,17 @@
     # development
     julia
     loc
-    gnuplot
     neovide
 
     # document
     texlive.combined.scheme-full
     python3Packages.pygments
-    pandoc
     okular
     zathura
     libreoffice
     pdfpc
-    mendeley
     zotero
+    calibre
     pdfgrep
 
     # media
@@ -28,7 +26,6 @@
     cmus
 
     # networking
-    microsoft-edge
     youtube-dl
     tor-browser-bundle-bin
     zulip
@@ -40,6 +37,7 @@
     qbittorrent
 
     # others
+    bitwarden
     cool-retro-term
     happy-hacking-gnu
     pavucontrol

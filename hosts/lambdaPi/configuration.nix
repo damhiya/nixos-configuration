@@ -10,6 +10,7 @@ in {
     ../../modules/home-manager.nix
     ../../modules/defaultPackages.nix
     ../../modules/sysutils.nix
+    ../../modules/bluetooth.nix
     ../../modules/android-file-transfer.nix
     ../../modules/locale.nix
     ../../modules/fonts.nix
@@ -49,7 +50,6 @@ in {
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
-  hardware.bluetooth.enable = true;
 
   hardware.opentabletdriver.enable = true;
   sound.enable = true;
@@ -89,7 +89,6 @@ in {
   services.openssh.enable = true;
   services.thermald.enable = true;
   services.printing.enable = true;
-  services.blueman.enable = true;
   xdg.mime.defaultApplications = {
     # firefox
     "x-scheme-handler/http" = "firefox.desktop";
