@@ -91,7 +91,6 @@ in {
   services.openssh.enable = true;
   services.thermald.enable = true;
   services.printing.enable = true;
-  services.blueman.enable = true;
   services.fprintd.enable = true;
   services.zfs.autoScrub.enable = true;
 
