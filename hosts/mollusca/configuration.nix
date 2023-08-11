@@ -91,6 +91,9 @@ in {
     MOZ_USE_XINPUT2 = "1";
   };
   programs.dconf.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+  };
   services.openssh.enable = true;
   services.printing.enable = true;
   services.fprintd.enable = true;
