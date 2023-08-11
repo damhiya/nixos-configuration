@@ -12,7 +12,7 @@
       diff = { colorMoved = "default"; };
       merge = { conflictstyle = "diff3"; };
       init = { defaultBranch = "main"; };
-      credential = { helper = "store"; };
+      credential = { helper = "netrc -f /home/damhiya/.netrc.gpg -v"; };
     };
   };
 }
