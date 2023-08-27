@@ -159,6 +159,8 @@ in {
       enableContribAndExtras = true;
       extraPackages = hsPkgs: with hsPkgs; [ PyF ];
     };
+    # View current xorg configuration at /etc/X11/xorg.conf
+    exportConfiguration = true;
   };
 
   system.stateVersion = "22.05";
