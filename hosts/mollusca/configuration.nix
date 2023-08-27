@@ -135,16 +135,52 @@ in {
     };
   };
 
+  # Use `systemctl restart display-manager.service` after system switch to take effect of new config
+  # See log at /var/log/X.0.log
   services.xserver = {
     enable = true;
     xrandrHeads = [ "eDP-1-1" "DP-2" ];
     dpi = 150;
-    libinput.enable = true;
-    libinput.touchpad = {
-      naturalScrolling = true;
-      accelProfile = "flat";
-      accelSpeed = "1.0";
+    # General libinput config
+    libinput = {
+      enable = true;
+      mouse = {
+        naturalScrolling = false;
+        accelProfile = "flat";
+        accelSpeed = "1.0";
+      };
+      touchpad = {
+        naturalScrolling = true;
+        accelProfile = "flat";
+        accelSpeed = "1.0";
+      };
     };
+    # Per-device input config
+    # man 4 libinput
+    # https://unix.stackexchange.com/questions/58117/determine-xinput-device-manufacturer-and-model
+    # This has no effect due to low priority
+    # # inputClassSections = [ ... ];
+    extraConfig = ''
+      Section "InputClass"
+        Identifier   "Logitech-G302"
+        MatchVendor  "Logitech"
+        MatchProduct "Gaming Mouse G302"
+        Driver       "libinput"
+        Option       "ScrollMethod" "button"
+        Option       "ScrollButton" "2"
+      EndSection
+
+      Section        "InputClass"
+        Identifier   "Kensington-SlimBlade-Pro-Trackball"
+        MatchVendor  "Kensington"
+        MatchProduct "SlimBlade Pro Trackball"
+        Driver       "libinput"
+        Option       "ScrollMethod" "button"
+        Option       "ScrollButton" "8"
+        Option       "ScrollButtonLock" "true"
+        Option       "ScrollPixelDistance" "50"
+      EndSection
+    '';
     autoRepeatDelay = 165;
     autoRepeatInterval = 50;
     displayManager = {
