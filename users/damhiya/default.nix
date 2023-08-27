@@ -13,7 +13,6 @@
       ./emacs
       ./direnv.nix
       ./ghc.nix
-      ./packages.nix
       ./programs.nix
       ./kime
       ./x11
