@@ -21,7 +21,6 @@
     krita
     imagemagick
     gcolor2
-    mpv
     nomacs
     cmus
 
