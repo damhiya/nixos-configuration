@@ -1,7 +1,11 @@
 {
+  # See following references:
+  # - man 4 libinput
+  # - https://unix.stackexchange.com/questions/58117/determine-xinput-device-manufacturer-and-model
   services.xserver = {
 
-    # General libinput config
+    # General input config
+    # default accel speed 0.0 is usually too slow flow flat profile
     libinput = {
       enable = true;
       mouse = {
@@ -18,8 +22,18 @@
 
     # Per-device input config
     # inputClassSections has no effect due to low priority
-    # man 4 libinput
     extraConfig = ''
+      Section "InputClass"
+        Identifier   "Trackpoint"
+        MatchProduct "TPPS/2 Elan TrackPoint"
+        Driver       "libinput"
+        Option       "AccelProfile" "adaptive"
+        Option       "AccelSpeed" "-0.5"
+        Option       "ScrollMethod" "button"
+        Option       "ScrollButton" "2"
+        Option       "ScrollPixelDistance" "30"
+      EndSection
+
       Section "InputClass"
         Identifier   "Logitech-G302"
         MatchVendor  "Logitech"
@@ -41,8 +55,9 @@
       EndSection
     '';
 
-    # auto repeat
+    # auto repeat (mili seconds)
     autoRepeatDelay = 165;
     autoRepeatInterval = 50;
+
   };
 }
