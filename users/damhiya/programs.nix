@@ -48,6 +48,7 @@
     pavucontrol
     dolphin
     obsidian
+    rlwrap
     silver-searcher
     bat
     delta
