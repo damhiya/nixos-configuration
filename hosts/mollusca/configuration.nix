@@ -19,6 +19,7 @@ in {
     ../../modules/networking.nix
     ../../modules/neovim
     ../../modules/breeze.nix
+    ../../modules/xinput.nix
     ./hardware-configuration.nix
 
     ../../users/damhiya
@@ -135,18 +136,12 @@ in {
     };
   };
 
+  # Use `systemctl restart display-manager.service` after system switch to take effect of new config
+  # See log at /var/log/X.0.log
   services.xserver = {
     enable = true;
     xrandrHeads = [ "eDP-1-1" "DP-2" ];
     dpi = 150;
-    libinput.enable = true;
-    libinput.touchpad = {
-      naturalScrolling = true;
-      accelProfile = "flat";
-      accelSpeed = "1.0";
-    };
-    autoRepeatDelay = 165;
-    autoRepeatInterval = 50;
     displayManager = {
       lightdm.enable = true;
       setupCommands = ''
@@ -159,6 +154,8 @@ in {
       enableContribAndExtras = true;
       extraPackages = hsPkgs: with hsPkgs; [ PyF ];
     };
+    # View current xorg configuration at /etc/X11/xorg.conf
+    exportConfiguration = true;
   };
 
   system.stateVersion = "22.05";
