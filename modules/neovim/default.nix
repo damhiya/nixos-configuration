@@ -7,7 +7,7 @@
         start = [
           lightline-vim
           nerdtree
-          nvim-surround
+          vim-surround
           haskell-vim
           vim-nix
           julia-vim
