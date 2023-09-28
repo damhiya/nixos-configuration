@@ -24,6 +24,9 @@
       "image/jpeg" = "org.nomacs.ImageLounge.desktop";
       "image/gif" = "org.nomacs.ImageLounge.desktop";
       "image/tiff" = "org.nomacs.ImageLounge.desktop";
+
+      # ms teams
+      "x-scheme-handler/msteams" = "teams.desktop";
     };
   };
 }
