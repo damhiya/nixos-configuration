@@ -36,7 +36,6 @@
     discord
     slack
     element-desktop
-    teams
     zoom-us
     tdesktop
     qbittorrent
