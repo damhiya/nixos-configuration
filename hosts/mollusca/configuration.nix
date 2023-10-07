@@ -11,6 +11,8 @@ in {
     ../../modules/defaultPackages.nix
     ../../modules/sysutils.nix
     ../../modules/power.nix
+    # I have a problem with audio on my machine which uses Realtek ALC3306 codec.
+    # I tested both pulseaudio and pipewire so I guess it's a diver issue.
     ../../modules/pipewire.nix
     ../../modules/bluetooth.nix
     ../../modules/android-file-transfer.nix
