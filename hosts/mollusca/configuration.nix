@@ -12,7 +12,7 @@ in {
     ../../modules/sysutils.nix
     ../../modules/power.nix
     # I have a problem with audio on my machine which uses Realtek ALC3306 codec.
-    # I tested both pulseaudio and pipewire so I guess it's a diver issue.
+    # AlsaMixer reports that the chip is 'Realtek ALC287' which is not true.
     ../../modules/pipewire.nix
     ../../modules/bluetooth.nix
     ../../modules/android-file-transfer.nix
@@ -73,6 +73,7 @@ in {
   };
 
   hardware.opentabletdriver.enable = true;
+  # rtkit is recommended for pipewire. See https://nixos.wiki/wiki/PipeWire
   security.rtkit.enable = true;
 
   networking = {

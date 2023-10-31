@@ -56,5 +56,6 @@
     filelight
     waifu2x-converter-cpp
     osu-lazer
+    steam
   ];
 }
