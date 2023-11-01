@@ -109,6 +109,7 @@ in {
   programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
+    pinentryFlavor = "tty";
   };
   services.openssh.enable = true;
   services.printing.enable = true;
