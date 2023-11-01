@@ -14,6 +14,5 @@
     alsa-utils
     pulseaudio
     pulsemixer
-    pamixer
   ];
 }
