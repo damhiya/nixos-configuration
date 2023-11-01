@@ -17,7 +17,7 @@
     zathura
     libreoffice
     pdfpc
-    zotero
+    # zotero
     calibre
     pdfgrep
 
@@ -27,7 +27,7 @@
     imagemagick
     gcolor2
     nomacs
-    cmus
+    # cmus
 
     # networking
     youtube-dl
