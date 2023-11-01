@@ -53,11 +53,11 @@ modifyLight (dev, step) b = spawn [fmt|light -s {dev} -{inc} {step}|]
   where inc = if b then 'A' else 'U'
 
 modifyAudio :: Bool -> X ()
-modifyAudio b = spawn [fmt|pamixer -{inc} 3|]
-  where inc = if b then 'i' else 'd'
+modifyAudio b = spawn [fmt|pactl set-sink-volume @DEFAULT_SINK@ {sign}3%|]
+  where sign = if b then '+' else '-'
 
 toggleAudio :: X ()
-toggleAudio = spawn "pamixer -t"
+toggleAudio = spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 -- my config
 myNormalBorderColor   = "#FFFFFF"
