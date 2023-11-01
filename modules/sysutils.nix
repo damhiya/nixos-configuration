@@ -21,16 +21,13 @@
     inxi
 
     # nix
-    nixfmt
     cachix
 
     # others
     android-file-transfer
     killall
-    file
     tree
     tmux
-    shellcheck
     jq
     scripts.st
     scripts.nixos-profile

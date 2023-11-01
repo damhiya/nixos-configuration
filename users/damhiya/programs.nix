@@ -5,8 +5,18 @@
   programs.mpv.enable = true;
 
   home.packages = with pkgs; [
+    # CLI utilities
+    rlwrap
+    silver-searcher
+    bat
+    delta
+    duf
+    file
+
     # development
     julia
+    nixfmt
+    shellcheck
     loc
     neovide
 
@@ -47,11 +57,6 @@
     pavucontrol
     dolphin
     obsidian
-    rlwrap
-    silver-searcher
-    bat
-    delta
-    duf
     filelight
     waifu2x-converter-cpp
     osu-lazer
