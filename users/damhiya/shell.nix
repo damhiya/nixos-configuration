@@ -9,6 +9,7 @@
     enable = true;
     interactiveShellInit = ''
       fish_vi_key_bindings
+      set -gx GPG_TTY (tty)
     '';
   };
 
