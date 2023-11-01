@@ -28,7 +28,7 @@
     killall
     tree
     tmux
-    jq
+    jq # TODO : remove this
     scripts.st
     scripts.nixos-profile
   ];
