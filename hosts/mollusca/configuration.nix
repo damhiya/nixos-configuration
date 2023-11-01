@@ -20,8 +20,10 @@
     ../../users/damhiya
   ];
 
+  # allow unfree
   nixpkgs.config.allowUnfree = true;
 
+  # boot
   boot = {
     loader.systemd-boot = {
       enable = true;
@@ -37,7 +39,11 @@
     ];
   };
 
-  programs.light.enable = true;
+  # networking
+  networking = {
+    hostId = "8d59776a";
+    hostName = "mollusca";
+  };
 
   # graphics
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -61,18 +67,6 @@
       pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
   };
-
-  hardware.opentabletdriver.enable = true;
-  # rtkit is recommended for pipewire. See https://nixos.wiki/wiki/PipeWire
-  security.rtkit.enable = true;
-
-  networking = {
-    hostId = "8d59776a";
-    hostName = "mollusca";
-  };
-
-  console.keyMap = "us";
-
   environment.systemPackages = with pkgs; [
     cudaPackages.cudatoolkit
     nvtop
@@ -81,12 +75,20 @@
     glmark2
   ];
 
+  hardware.opentabletdriver.enable = true;
+  # rtkit is recommended for pipewire. See https://nixos.wiki/wiki/PipeWire
+  security.rtkit.enable = true;
+
+  console.keyMap = "us";
+
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     LIBVA_DRIVER_NAME = "iHD";
     BROWSER = "firefox";
     MOZ_USE_XINPUT2 = "1";
   };
+
+  programs.light.enable = true;
   programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
