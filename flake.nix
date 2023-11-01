@@ -35,7 +35,7 @@
     let
       baseModule = {
         imports = [
-          home-manager.nixosModules.home-manager
+          home-manager.nixosModules.default
           kmonad.nixosModules.default
         ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
