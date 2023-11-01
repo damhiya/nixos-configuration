@@ -25,6 +25,7 @@
     cachix
 
     # others
+    android-file-transfer
     killall
     file
     tree

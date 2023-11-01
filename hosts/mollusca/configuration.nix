@@ -9,7 +9,6 @@
     # AlsaMixer reports that the chip is 'Realtek ALC287' which is not true.
     ../../modules/pipewire.nix
     ../../modules/bluetooth.nix
-    ../../modules/android-file-transfer.nix
     ../../modules/locale.nix
     ../../modules/fonts.nix
     ../../modules/networking.nix

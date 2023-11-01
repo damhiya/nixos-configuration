@@ -5,7 +5,6 @@
     ../../modules/defaultPackages.nix
     ../../modules/sysutils.nix
     ../../modules/bluetooth.nix
-    ../../modules/android-file-transfer.nix
     ../../modules/locale.nix
     ../../modules/fonts.nix
     ../../modules/networking.nix
