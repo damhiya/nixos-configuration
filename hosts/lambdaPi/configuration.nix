@@ -1,17 +1,10 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, ... }:
-let commonPackages = import ../../common/commonPackages.nix pkgs;
-in {
+{ config, pkgs, lib, ... }: {
   imports = [
     ../../modules/nix.nix
     ../../modules/home-manager.nix
     ../../modules/defaultPackages.nix
     ../../modules/sysutils.nix
     ../../modules/bluetooth.nix
-    ../../modules/android-file-transfer.nix
     ../../modules/locale.nix
     ../../modules/fonts.nix
     ../../modules/networking.nix

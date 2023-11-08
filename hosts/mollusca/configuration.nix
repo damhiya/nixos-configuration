@@ -1,10 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, ... }:
-let commonPackages = import ../../common/commonPackages.nix pkgs;
-in {
+{ config, pkgs, lib, ... }: {
   imports = [
     ../../modules/nix.nix
     ../../modules/home-manager.nix
@@ -15,7 +9,6 @@ in {
     # AlsaMixer reports that the chip is 'Realtek ALC287' which is not true.
     ../../modules/pipewire.nix
     ../../modules/bluetooth.nix
-    ../../modules/android-file-transfer.nix
     ../../modules/locale.nix
     ../../modules/fonts.nix
     ../../modules/networking.nix
@@ -26,8 +19,10 @@ in {
     ../../users/damhiya
   ];
 
+  # allow unfree
   nixpkgs.config.allowUnfree = true;
 
+  # boot
   boot = {
     loader.systemd-boot = {
       enable = true;
@@ -43,10 +38,10 @@ in {
     ];
   };
 
-  programs.light.enable = true;
-  programs.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
+  # networking
+  networking = {
+    hostId = "8d59776a";
+    hostName = "mollusca";
   };
 
   # graphics
@@ -71,18 +66,6 @@ in {
       pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
   };
-
-  hardware.opentabletdriver.enable = true;
-  # rtkit is recommended for pipewire. See https://nixos.wiki/wiki/PipeWire
-  security.rtkit.enable = true;
-
-  networking = {
-    hostId = "8d59776a";
-    hostName = "mollusca";
-  };
-
-  console.keyMap = "us";
-
   environment.systemPackages = with pkgs; [
     cudaPackages.cudatoolkit
     nvtop
@@ -90,6 +73,12 @@ in {
     vulkan-tools
     glmark2
   ];
+
+  hardware.opentabletdriver.enable = true;
+  # rtkit is recommended for pipewire. See https://nixos.wiki/wiki/PipeWire
+  security.rtkit.enable = true;
+
+  console.keyMap = "us";
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
@@ -106,10 +95,16 @@ in {
     NIXOS_OZONE_WL = "1";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
+
+  programs.light.enable = true;
   programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "tty";
+  };
+  programs.hyprland = {
+    enable = true;
+    enableNvidiaPatches = true;
   };
   services.openssh.enable = true;
   services.printing.enable = true;
