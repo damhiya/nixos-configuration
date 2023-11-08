@@ -62,8 +62,8 @@
       pkgs.libvdpau
       # vaapi
       pkgs.intel-media-driver     # "iHD"
-      pkgs.vaapiVdpau             # "vdpau"
-      pkgs.nvidia-vaapi-driver    # "nvidia"
+      # pkgs.vaapiVdpau             # "vdpau"
+      # pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
   };
   environment.systemPackages = with pkgs; [
@@ -82,7 +82,7 @@
 
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    LIBVA_DRIVER_NAME = "iHD";
+    LIBVA_DRIVER_NAME = ""; # use nvdec rather than vaapi
     # WLR_RENDERER = "vulkan";
     WLR_NO_HARDWARE_CURSORS = "1";
     EGL_PLATFORM = "wayland";
