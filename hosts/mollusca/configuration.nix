@@ -139,15 +139,8 @@
   # See log at /var/log/X.0.log
   services.xserver = {
     enable = true;
-    xrandrHeads = [ "eDP-1-1" "DP-2" ];
     dpi = 150;
-    displayManager = {
-      lightdm.enable = true;
-      setupCommands = ''
-        xrandr --output eDP-1-1 --primary
-        xrandr --output DP-2 --right-of eDP-1-1
-      '';
-    };
+    displayManager.lightdm.enable = true;
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
