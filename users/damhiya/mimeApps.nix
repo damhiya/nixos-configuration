@@ -1,6 +1,9 @@
 { ... }: {
   xdg.mimeApps = {
     enable = true;
+    associations.added = {
+      "x-scheme-handler/tg" = "org.telegram.desktop.desktop";
+    };
     defaultApplications = {
       # firefox
       "x-scheme-handler/http" = "firefox.desktop";
@@ -24,6 +27,9 @@
       "image/jpeg" = "org.nomacs.ImageLounge.desktop";
       "image/gif" = "org.nomacs.ImageLounge.desktop";
       "image/tiff" = "org.nomacs.ImageLounge.desktop";
+
+      # telegram
+      "x-scheme-handler/tg" = "org.telegram.desktop.desktop";
     };
   };
 }
