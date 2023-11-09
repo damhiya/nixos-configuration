@@ -48,6 +48,9 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
+    # https://github.com/NixOS/nixpkgs/issues/73494
+    # https://github.com/hyprwm/Hyprland/issues/2950
+    powerManagement.enable = true;
     prime = {
       sync.enable = true;
       intelBusId = "PCI:0:2:0";
