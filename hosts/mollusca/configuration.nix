@@ -105,11 +105,6 @@
     enable = true;
     pinentryFlavor = "tty";
   };
-  programs.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
-    xwayland.enable = false;
-  };
   services.openssh.enable = true;
   services.printing.enable = true;
   services.fprintd.enable = true;
