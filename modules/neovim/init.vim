@@ -14,7 +14,7 @@ set hlsearch
 set cindent
 set autoindent
 set smartindent
-set guifont=Iosevka\ Fixed:h9
+set guifont=Iosevka\ Fixed:h11
 
 " lightline
 set laststatus=2
