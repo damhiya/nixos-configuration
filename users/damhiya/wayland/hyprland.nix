@@ -2,7 +2,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
-    xwayland.enable = false;
     settings = {
       monitor = [
         "eDP-1, 2560x1600@165, 0x0, 1.6"
