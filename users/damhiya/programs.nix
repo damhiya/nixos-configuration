@@ -51,6 +51,7 @@
     qbittorrent
 
     # others
+    helvum
     bitwarden
     cool-retro-term
     happy-hacking-gnu
