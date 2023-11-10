@@ -8,7 +8,7 @@
         "eDP-1, 2560x1600@165, 0x0, 1.6"
         # ", preferred, auto, auto"
       ];
-      exec-once = [ "kime" ];
+      exec-once = [ "kime --no-daemon" ];
       exec = [ "hyprpaper" ];
       input = {
         kb_layout = "us";
