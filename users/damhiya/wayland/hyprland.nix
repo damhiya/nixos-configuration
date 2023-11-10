@@ -15,7 +15,7 @@
         repeat_rate = 20;   # 50ms
         repeat_delay = 165; # 165ms
         follow_mouse = 1;
-        touchpad.natural_scroll = "yes";
+        touchpad.natural_scroll = true;
         sensitivity = 0;
       };
       general = {
@@ -33,13 +33,16 @@
           size = 3;
           passes = 1;
         };
-        drop_shadow = "yes";
+        drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
         "col.shadow" = "rgba(1a1a1aee)";
       };
+      misc = {
+        force_default_wallpaper = 2;
+      };
       animations = {
-        enabled = "yes";
+        enabled = true;
           bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
           animation = [
             "windows, 1, 7, myBezier"
@@ -50,8 +53,8 @@
             "workspaces, 1, 6, default"
           ];
       };
-      dwindle.preserve_split = "yes";
-      gestures.workspace_swipe = "on";
+      dwindle.preserve_split = true;
+      gestures.workspace_swipe = true;
 
       "$mainMod" = "SUPER";
       bind = [
