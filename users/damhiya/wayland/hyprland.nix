@@ -28,8 +28,8 @@
         rounding = 10;
         blur = {
           enabled = true;
-          size = 3;
-          passes = 1;
+          size = 10;
+          passes = 3;
         };
         drop_shadow = true;
         shadow_range = 4;
@@ -66,6 +66,7 @@
 
         "$mainMod SHIFT, Return, exec, foot"
         "$mainMod, Return, fullscreen"
+        "$mainMod, M, fullscreen, 1"
         "$mainMod SHIFT, C, killactive, "
         "$mainMod SHIFT, Q, exit, "
         "$mainMod, V, togglefloating, "

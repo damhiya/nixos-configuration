@@ -7,7 +7,7 @@
         font = "Iosevka Fixed:size=11";
       };
       colors = {
-        alpha = "1.0";
+        alpha = "0.6";
         foreground = "ffffff";
         background = "000000";
 
