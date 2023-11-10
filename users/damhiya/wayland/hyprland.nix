@@ -12,6 +12,8 @@
       exec = [ "hyprpaper" ];
       input = {
         kb_layout = "us";
+        repeat_rate = 20;   # 50ms
+        repeat_delay = 165; # 165ms
         follow_mouse = 1;
         touchpad.natural_scroll = "yes";
         sensitivity = 0;
