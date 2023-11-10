@@ -5,10 +5,9 @@
     settings = {
       monitor = [
         "eDP-1, 2560x1600@165, 0x0, 1.6"
-        # ", preferred, auto, auto"
       ];
-      exec-once = [ "kime --no-daemon" ];
-      exec = [ "hyprpaper" ];
+      exec-once = [ "kime --no-daemon" "hyprpaper" ];
+      exec = [ "systemctl --user restart waybar.service" ];
       input = {
         kb_layout = "us";
         repeat_rate = 20;   # 50ms
