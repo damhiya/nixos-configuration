@@ -5,7 +5,6 @@
     wf-recorder
     wdisplays
     fuzzel
-    swaybg
     hyprpaper
   ];
 }
