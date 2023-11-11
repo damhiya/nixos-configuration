@@ -45,6 +45,8 @@
                 (builtins.readFile ./scripts/st.sh);
               nixos-profile = prev.writeShellScriptBin "nixos-profile"
                 (builtins.readFile ./scripts/nixos-profile.sh);
+              hyprcwd = prev.writeShellScriptBin "hyprcwd"
+                (builtins.readFile ./scripts/hyprcwd.sh);
             };
           })
         ];

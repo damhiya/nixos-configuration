@@ -6,5 +6,6 @@
     wdisplays
     fuzzel
     hyprpaper
+    scripts.hyprcwd
   ];
 }
