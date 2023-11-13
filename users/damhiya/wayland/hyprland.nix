@@ -64,7 +64,7 @@
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -3%"
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +3%"
 
-        "$mainMod SHIFT, Return, exec, foot -D \"$(hyprcwd)\""
+        "$mainMod SHIFT, Return, exec, foot -D \"$(hyprcwd || echo \"$HOME\")\""
         "$mainMod, Return, fullscreen"
         "$mainMod, M, fullscreen, 1"
         "$mainMod SHIFT, C, killactive, "
