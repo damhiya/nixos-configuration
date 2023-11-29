@@ -15,7 +15,7 @@
       ./ghc.nix
       ./programs.nix
       ./kime
-      ./wayland
+      ./x11
       ./mimeApps.nix
       ./theme.nix
     ];

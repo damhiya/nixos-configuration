@@ -14,6 +14,8 @@
     ../../modules/networking.nix
     ../../modules/neovim
     ../../modules/breeze.nix
+    ../../modules/xmonad.nix
+    ../../modules/xinput.nix
     ./hardware-configuration.nix
 
     ../../users/damhiya
@@ -50,7 +52,6 @@
     modesetting.enable = true;
     # https://github.com/NixOS/nixpkgs/issues/73494
     # https://github.com/hyprwm/Hyprland/issues/2950
-    powerManagement.enable = true;
     # prime = {
     #   sync.enable = true;
     #   intelBusId = "PCI:0:2:0";
@@ -86,17 +87,8 @@
   environment.variables = {
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     LIBVA_DRIVER_NAME = ""; # use nvdec rather than vaapi
-    # WLR_RENDERER = "vulkan";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    EGL_PLATFORM = "wayland";
-    SDL_VIDEODRIVER = "wayland";
-    GDK_BACKEND = "wayland";
-    # GBM_BACKEND = "nvidia-drm";
     BROWSER = "firefox";
-    MOZ_ENABLE_WAYLAND = "1";
     MOZ_USE_XINPUT2 = "1";
-    NIXOS_OZONE_WL = "1";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
   programs.light.enable = true;
