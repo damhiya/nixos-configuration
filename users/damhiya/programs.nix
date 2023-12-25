@@ -57,7 +57,6 @@
     happy-hacking-gnu
     pavucontrol
     dolphin
-    obsidian
     filelight
     waifu2x-converter-cpp
     osu-lazer
