@@ -43,7 +43,7 @@ captureRoot = spawn "import -window root ~/Pictures/Screenshots/screenshot.png"
 type LightConfig = (String, Int)
 
 monitorBacklight :: LightConfig
-monitorBacklight = ("sysfs/backlight/intel_backlight", 10)
+monitorBacklight = ("sysfs/backlight/nvidia_0", 10)
 
 keyboardBacklight :: LightConfig
 keyboardBacklight = ("sysfs/leds/tpacpi::kbd_backlight", 50)
