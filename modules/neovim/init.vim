@@ -15,6 +15,7 @@ set cindent
 set autoindent
 set smartindent
 set guifont=Iosevka\ Fixed:h9
+let g:neovide_scroll_animation_length = 0.05
 
 " lightline
 set laststatus=2
