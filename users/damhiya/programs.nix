@@ -59,6 +59,7 @@
     dolphin
     filelight
     waifu2x-converter-cpp
+    tetrio-desktop
     osu-lazer
     steam
     spotify
