@@ -1,3 +1,5 @@
+#!@shell@
+
 if [ $# = 0 ] ; then
   echo "st: no argument"
 elif [ $# -ge 2 ] ; then
