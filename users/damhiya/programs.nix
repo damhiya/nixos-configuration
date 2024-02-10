@@ -21,8 +21,6 @@
     neovide
 
     # document
-    texlive.combined.scheme-full
-    python3Packages.pygments
     okular
     zathura
     libreoffice
