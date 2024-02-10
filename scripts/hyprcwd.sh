@@ -1,3 +1,6 @@
+#!@shell@
+PATH="@hyprland@/bin:@jq@/bin:$PATH"
+
 read wpid class < <(echo $(hyprctl activewindow -j | jq -r ".pid, .class"))
 case "$class" in
   foot|neovide)

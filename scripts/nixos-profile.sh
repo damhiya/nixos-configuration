@@ -1,13 +1,15 @@
-PROFILE_PATH=/nix/var/nix/profiles
+#!@shell@
+PATH="@jq@/bin:$PATH"
+PROFILE_DIR=/nix/var/nix/profiles
 
 get_list() {
-  find $PROFILE_PATH -type l \
-  | awk "match(\$0, /^${PROFILE_PATH//\//\\\/}\/system-([0-9]*)-link\$/, res) { print res[1] }" \
+  find $PROFILE_DIR -type l \
+  | awk "match(\$0, /^${PROFILE_DIR//\//\\\/}\/system-([0-9]*)-link\$/, res) { print res[1] }" \
   | sort
 }
 
 get_current() {
-  readlink "$PROFILE_PATH/system" \
+  readlink "$PROFILE_DIR/system" \
   | awk 'match($0, /^system-([0-9]*)-link$/, res) { print res[1] }'
 }
 
@@ -20,7 +22,7 @@ list() {
   nums=$(get_list)
   current=$(get_current)
   for num in $nums; do
-    link="$PROFILE_PATH/system-$num-link"
+    link="$PROFILE_DIR/system-$num-link"
     date=$(date -d "@$(stat --printf "%W" "$link")" "+%F %T")
     if [ -e "$link/boot.json" ] ; then
       info=$(jq -r '."org.nixos.bootspec.v1"."label"' <"$link/boot.json")
@@ -49,12 +51,12 @@ remove_single() {
   if [ "$num" = "$current" ] ; then
     echo "You should not remove current profile $current"
     exit
-  elif [ ! -e "$PROFILE_PATH/system-$num-link" ] ; then
+  elif [ ! -e "$PROFILE_DIR/system-$num-link" ] ; then
     echo "No such profile exists : $num"
     exit
   fi
   echo "remove $num"
-  sudo rm "$PROFILE_PATH/system-$num-link"
+  sudo rm "$PROFILE_DIR/system-$num-link"
 }
 
 remove_range() {
@@ -69,7 +71,7 @@ remove_range() {
   for num in $nums ; do
     if [ "$min" -le "$num" ] && [ "$num" -le "$max" ] ; then
       echo "remove $num"
-      sudo rm "$PROFILE_PATH/system-$num-link"
+      sudo rm "$PROFILE_DIR/system-$num-link"
     fi
   done
 }

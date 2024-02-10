@@ -40,13 +40,26 @@
           hhg-overlay.overlays.default
           (final: prev: {
             scripts = {
-              # TODO : https://discourse.nixos.org/t/how-to-create-a-script-with-dependencies/7970/2
+              # https://discourse.nixos.org/t/how-to-create-a-script-with-dependencies/7970/2
               st = prev.writeShellScriptBin "st"
                 (builtins.readFile ./scripts/st.sh);
-              nixos-profile = prev.writeShellScriptBin "nixos-profile"
-                (builtins.readFile ./scripts/nixos-profile.sh);
-              hyprcwd = prev.writeShellScriptBin "hyprcwd"
-                (builtins.readFile ./scripts/hyprcwd.sh);
+              nixos-profile = prev.substituteAll {
+                src = ./scripts/nixos-profile.sh;
+                dir = "bin";
+                name = "nixos-profile";
+                isExecutable = true;
+                shell = prev.stdenv.shell;
+                jq = prev.jq;
+              };
+              hyprcwd = prev.substituteAll {
+                src = ./scripts/hyprcwd.sh;
+                dir = "bin";
+                name = "hyprcwd";
+                isExecutable = true;
+                shell = prev.stdenv.shell;
+                hyprland = prev.hyprland;
+                jq = prev.jq;
+              };
             };
           })
         ];
