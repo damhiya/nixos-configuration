@@ -1,5 +1,5 @@
 #!@shell@
-PATH="@jq@/bin:$PATH"
+export PATH="@jq@/bin:@gawk@/bin:@findutils@/bin:@coreutils@/bin"
 PROFILE_DIR=/nix/var/nix/profiles
 
 get_list() {
@@ -56,7 +56,7 @@ remove_single() {
     exit
   fi
   echo "remove $num"
-  sudo rm "$PROFILE_DIR/system-$num-link"
+  rm "$PROFILE_DIR/system-$num-link"
 }
 
 remove_range() {
@@ -71,7 +71,7 @@ remove_range() {
   for num in $nums ; do
     if [ "$min" -le "$num" ] && [ "$num" -le "$max" ] ; then
       echo "remove $num"
-      sudo rm "$PROFILE_DIR/system-$num-link"
+      rm "$PROFILE_DIR/system-$num-link"
     fi
   done
 }

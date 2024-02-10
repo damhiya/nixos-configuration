@@ -1,4 +1,5 @@
 #!@shell@
+export PATH="@coreutils@/bin"
 
 if [ $# = 0 ] ; then
   echo "st: no argument"

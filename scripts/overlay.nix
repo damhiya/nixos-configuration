@@ -9,6 +9,7 @@ let
       inherit name;
       isExecutable = true;
       shell = prev.stdenv.shell;
+      coreutils = prev.coreutils-full;
     } // attrs);
 
 in {
@@ -16,7 +17,7 @@ in {
 
     st = mkScript "st" { };
 
-    nixos-profile = mkScript "nixos-profile" { inherit (prev) jq; };
+    nixos-profile = mkScript "nixos-profile" { inherit (prev) findutils gawk jq; };
 
     hyprcwd = mkScript "hyprcwd" { inherit (prev) hyprland jq; };
 

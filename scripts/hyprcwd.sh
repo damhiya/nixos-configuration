@@ -1,5 +1,5 @@
 #!@shell@
-PATH="@hyprland@/bin:@jq@/bin:$PATH"
+export PATH="@jq@/bin:@hyprland@/bin:@coreutils@/bin"
 
 read wpid class < <(echo $(hyprctl activewindow -j | jq -r ".pid, .class"))
 case "$class" in
