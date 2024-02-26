@@ -37,6 +37,8 @@
       "ibt=off"
       # Prevent hanging while rebooting
       "reboot=acpi"
+      # https://wiki.hyprland.org/Nvidia/
+      # "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     ];
   };
 
@@ -50,10 +52,12 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
+    # https://nixos.wiki/wiki/Nvidia
     # https://github.com/NixOS/nixpkgs/issues/73494
     # https://github.com/hyprwm/Hyprland/issues/2950
     # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
     # powerManagement.enable = true;
+    # powerManagement.finegrained = true;
     # prime = {
     #   sync.enable = true;
     #   intelBusId = "PCI:0:2:0";
