@@ -143,6 +143,31 @@
           )
         '';
       };
+      hhkb = {
+        device = "/dev/input/by-id/usb-PFU_Limited_HHKB-Classic-event-kbd";
+        defcfg = {
+          enable = true;
+          compose.key = null;
+          fallthrough = true;
+          allowCommands = false;
+        };
+        config = ''
+          (defsrc
+              esc  1    2    3    4    5    6    7    8    9    0    -    =    \    grv
+              tab  q    w    e    r    t    y    u    i    o    p    [    ]    bspc
+              lctl a    s    d    f    g    h    j    k    l    ;    '         ret
+              lsft z    x    c    v    b    n    m    ,    .    /              rsft
+                        lalt lmet           spc            rmet ralt
+          )
+          (deflayer qwerty
+              esc  1    2    3    4    5    6    7    8    9    0    -    =    \    grv
+              tab  q    w    e    r    t    y    u    i    o    p    [    ]    bspc
+              lctl a    s    d    f    g    h    j    k    l    ;    '         ret
+              lsft z    x    c    v    b    n    m    ,    .    /              rsft
+                        lalt lmet           spc            rmet ralt
+          )
+        '';
+      };
     };
   };
 
