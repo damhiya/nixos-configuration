@@ -101,7 +101,7 @@
   programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "tty";
+    pinentryPackage = pkgs.pinentry-curses;
   };
   services.openssh.enable = true;
   services.printing.enable = true;
