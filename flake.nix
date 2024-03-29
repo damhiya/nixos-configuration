@@ -33,7 +33,6 @@
         imports =
           [ home-manager.nixosModules.default kmonad.nixosModules.default ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-        nix.registry.nixos.flake = nixpkgs;
         nixpkgs.overlays = [
           iosevka-custom.overlays.default
           notsodeep-overlay.overlays.default
