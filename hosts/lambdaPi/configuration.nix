@@ -60,7 +60,7 @@
 
   environment.systemPackages = with pkgs; [
     cudaPackages_11_2.cudatoolkit
-    nvtop
+    nvtopPackages.full
     glxinfo
     vulkan-tools
     glmark2

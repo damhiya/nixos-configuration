@@ -78,7 +78,7 @@
   };
   environment.systemPackages = with pkgs; [
     cudaPackages.cudatoolkit
-    nvtop
+    nvtopPackages.full
     glxinfo
     vulkan-tools
     glmark2
