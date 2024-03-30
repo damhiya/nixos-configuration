@@ -5,6 +5,7 @@
     configure = {
       packages.all = with pkgs.vimPlugins; {
         start = [
+          nvim-treesitter.withAllGrammars
           lightline-vim
           nerdtree
           vim-surround
