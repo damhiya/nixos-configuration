@@ -62,7 +62,7 @@ toggleAudio = spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 -- my config
 myNormalBorderColor   = "#FFFFFF"
 myFocusedBorderColor  = "#4646FA"
-myTerminal            = "termite -e fish -d \"$(xcwd)\""
+myTerminal            = "alacritty -o \"working_directory=\\\"$(xcwd)\\\"\""
 myLayoutHook = lessBorders OnlyScreenFloat (avoidStruts tiled ||| noBorders Full)
   where
     tiled = space $ Tall nmaster delta ratio

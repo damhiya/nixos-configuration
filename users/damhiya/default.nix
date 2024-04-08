@@ -15,6 +15,7 @@
       ./ghc.nix
       ./programs.nix
       ./kime
+      ./alacritty.nix
       ./x11
       ./mimeApps.nix
       ./theme.nix
