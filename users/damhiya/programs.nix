@@ -1,8 +1,10 @@
 { pkgs, ... }: {
-  programs.vscode.enable = true;
-  programs.firefox.enable = true;
-  programs.chromium.enable = true;
-  programs.mpv.enable = true;
+  programs = {
+    vscode.enable = true;
+    firefox.enable = true;
+    chromium.enable = true;
+    mpv.enable = true;
+  };
 
   home.packages = with pkgs; [
     # CLI utilities
