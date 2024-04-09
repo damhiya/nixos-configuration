@@ -13,7 +13,6 @@
     ../../modules/fonts.nix
     ../../modules/networking.nix
     ../../modules/neovim
-    ../../modules/breeze.nix
     ../../modules/xmonad.nix
     ../../modules/xinput.nix
     ./hardware-configuration.nix
