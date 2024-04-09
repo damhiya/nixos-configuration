@@ -130,7 +130,8 @@ myBorderWidth         = 10
 myStartupHook :: X ()
 myStartupHook = do
   spawn . unlines $
-    [ "autorandr --change --skip-option crtc"
+    [ "xsetroot -cursor_name left_ptr"
+    , "autorandr --change --skip-option crtc"
     , "systemctl --user restart polybar.service"
     , "feh --bg-fill ~/Pictures/wallpaper"
     ]
