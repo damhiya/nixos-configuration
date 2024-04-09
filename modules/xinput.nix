@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   # See following references:
   # - man 4 libinput
   # - https://unix.stackexchange.com/questions/58117/determine-xinput-device-manufacturer-and-model
@@ -60,4 +60,8 @@
     autoRepeatInterval = 50;
 
   };
+
+  environment.systemPackages = with pkgs; [
+    libinput
+  ];
 }
