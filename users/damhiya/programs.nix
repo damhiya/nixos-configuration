@@ -17,7 +17,7 @@
 
     # development
     julia
-    nixfmt
+    nixfmt-rfc-style
     shellcheck
     loc
     neovide
