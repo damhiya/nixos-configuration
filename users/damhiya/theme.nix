@@ -1,27 +1,23 @@
-{ pkgs, ... }: {
-  # TODO
-  # home.pointerCursor = {
-  #   gtk.enable = true;
-  #   x11.enable = true;
-  #   package = pkgs.vanilla-dmz;
-  #   name = "Vanilla-DMZ";
-  # };
-  #
-  # gtk = {
-  #   enable = true;
-  #   cursorTheme = {
-  #     package = pkgs.vanilla-dmz;
-  #     name = "Vanilla-DMZ";
-  #     size = 16;
-  #   };
-  #   gtk.font = { ... };
-  #   gtk2 = { ... };
-  #   gtk3 = { ... };
-  #   gtk4 = { ... };
-  # };
-  #
-  # qt = {
-  #   enable = true;
-  #   ...
-  # }
+{ pkgs, config, ... }: {
+  home.pointerCursor = {
+    package = pkgs.kdePackages.breeze;
+    name = "breeze_cursors";
+    size = 32;
+    x11.enable = true;
+    gtk.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+    font = {
+      name = "Noto Sans";
+      size = 10;
+    };
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk3";
+  };
 }
