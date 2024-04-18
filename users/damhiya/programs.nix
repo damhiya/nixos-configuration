@@ -26,7 +26,7 @@
     okular
     zathura
     libreoffice
-    pdfpc
+    # pdfpc
     # zotero
     calibre
     pdfgrep
