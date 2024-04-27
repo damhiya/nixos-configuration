@@ -1,4 +1,13 @@
 { pkgs, ... }: {
+  imports = [
+    ./git.nix
+    ./ghc.nix
+    ./direnv.nix
+    ./alacritty.nix
+    ./emacs
+    ./kime
+  ];
+
   programs = {
     vscode.enable = true;
     firefox.enable = true;

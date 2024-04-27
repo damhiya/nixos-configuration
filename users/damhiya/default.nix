@@ -9,13 +9,7 @@
     imports = [
       ./netrc
       ./shell.nix
-      ./git.nix
-      ./emacs
-      ./direnv.nix
-      ./ghc.nix
-      ./programs.nix
-      ./kime
-      ./alacritty.nix
+      ./programs
       ./x11
       ./mimeApps.nix
       ./theme.nix
