@@ -3,6 +3,7 @@
     ./git.nix
     ./ghc.nix
     ./direnv.nix
+    ./readline.nix
     ./alacritty.nix
     ./emacs
     ./kime
@@ -17,7 +18,6 @@
 
   home.packages = with pkgs; [
     # CLI utilities
-    rlwrap
     silver-searcher
     bat
     delta
