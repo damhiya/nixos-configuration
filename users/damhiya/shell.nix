@@ -3,6 +3,7 @@
     grep = "grep --color";
     emc = "emacsclient -nc";
     nv = "neovide";
+    xcp = "xclip -selection clipboard";
   };
 
   programs.fish = {
