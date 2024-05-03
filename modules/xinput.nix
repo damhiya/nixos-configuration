@@ -2,25 +2,25 @@
   # See following references:
   # - man 4 libinput
   # - https://unix.stackexchange.com/questions/58117/determine-xinput-device-manufacturer-and-model
-  services.xserver = {
 
-    # General input config
+  # General input config
+  services. libinput = {
+    enable = true;
     # default accel speed 0.0 is usually too slow flow flat profile
-    libinput = {
-      enable = true;
-      mouse = {
-        naturalScrolling = false;
-        accelProfile = "flat";
-        accelSpeed = "1.0";
-      };
-      touchpad = {
-        naturalScrolling = true;
-        accelProfile = "flat";
-        accelSpeed = "1.0";
-      };
+    mouse = {
+      naturalScrolling = false;
+      accelProfile = "flat";
+      accelSpeed = "1.0";
     };
+    touchpad = {
+      naturalScrolling = true;
+      accelProfile = "flat";
+      accelSpeed = "1.0";
+    };
+  };
 
-    # Per-device input config
+  # Per-device input config
+  services.xserver = {
     # inputClassSections has no effect due to low priority
     extraConfig = ''
       Section "InputClass"
