@@ -49,7 +49,7 @@
     # cmus
 
     # networking
-    youtube-dl
+    yt-dlp
     tor-browser-bundle-bin
     zulip
     discord
