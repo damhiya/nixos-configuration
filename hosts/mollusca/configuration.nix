@@ -30,7 +30,7 @@
       editor = false;
     };
     supportedFilesystems = [ "ntfs" "zfs" ];
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/256
       "ibt=off"
