@@ -2,7 +2,6 @@
   home.shellAliases = {
     grep = "grep --color";
     emc = "emacsclient -nc";
-    nv = "neovide";
     xcp = "xclip -selection clipboard";
   };
 
@@ -11,6 +10,9 @@
     interactiveShellInit = ''
       fish_vi_key_bindings
       set -gx GPG_TTY (tty)
+      function nv
+        neovide $argv &; disown
+      end
     '';
   };
 
