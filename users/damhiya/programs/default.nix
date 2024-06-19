@@ -23,6 +23,7 @@
     delta
     duf
     file
+    fastfetch
 
     # development
     julia

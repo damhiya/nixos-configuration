@@ -17,7 +17,6 @@
     lm_sensors
     smartmontools
     htop
-    neofetch
     inxi
 
     # nix
