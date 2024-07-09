@@ -31,6 +31,7 @@
     shellcheck
     loc
     neovide
+    zed-editor
 
     # document
     okular
