@@ -2,7 +2,8 @@
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
-      enabled = "kime";
+      enable = true;
+      type = "kime";
       kime.iconColor = "White";
     };
   };
