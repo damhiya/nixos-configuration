@@ -44,6 +44,7 @@
 
     # media
     ffmpeg
+    obs-studio
     krita
     imagemagick
     gcolor2
