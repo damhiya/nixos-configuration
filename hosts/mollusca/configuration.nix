@@ -50,11 +50,16 @@
   # graphics
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
+    powerManagement.enable = true;
     # https://nixos.wiki/wiki/Nvidia
     # https://github.com/NixOS/nixpkgs/issues/73494
     # https://github.com/hyprwm/Hyprland/issues/2950
+    # https://github.com/hyprwm/Hyprland/issues/6345
     # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
+    # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/662
     # powerManagement.enable = true;
     # powerManagement.finegrained = true;
     # prime = {
