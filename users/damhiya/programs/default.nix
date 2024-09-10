@@ -58,6 +58,7 @@
     discord
     slack
     element-desktop
+    session-desktop
     zoom-us
     tdesktop
     qbittorrent
