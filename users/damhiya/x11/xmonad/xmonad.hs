@@ -101,7 +101,7 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   , ((modMask              , xK_comma ), sendMessage (IncMasterN 1))
   , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
 
-  , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)
+  , ((modMask .|. shiftMask, xK_q     ), spawn "killall kime" >> io exitSuccess)
   , ((modMask              , xK_q     ), restartXMonad)
 
   , ((0                    , xF86XK_AudioRaiseVolume), modifyAudio True)
