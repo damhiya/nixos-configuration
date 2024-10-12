@@ -47,7 +47,7 @@
     obs-studio
     krita
     imagemagick
-    gcolor2
+    gcolor3
     nomacs
     # cmus
 
