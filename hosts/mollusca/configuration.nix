@@ -53,7 +53,7 @@
     open = false;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     # https://nixos.wiki/wiki/Nvidia
     # https://github.com/NixOS/nixpkgs/issues/73494
     # https://github.com/hyprwm/Hyprland/issues/2950
