@@ -18,6 +18,7 @@
     smartmontools
     htop
     inxi
+    pstree
 
     # nix
     cachix
