@@ -7,7 +7,6 @@
 
   home-manager.users.damhiya = {
     imports = [
-      ./netrc
       ./shell.nix
       ./programs
       ./x11
