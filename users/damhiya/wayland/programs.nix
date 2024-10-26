@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     wl-clipboard
     wf-recorder
-    wdisplays
     fuzzel
     hyprpaper
     script-hyprcwd

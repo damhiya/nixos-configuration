@@ -3,7 +3,8 @@
     enable = true;
     settings = {
       monitor = [
-        "eDP-1, 2560x1600@165, 0x0, 1.6"
+        "eDP-1, 2560x1600@165.00, 0x0, 1.6"
+        ", highres, auto, 1.6"
       ];
       exec-once = [
         "kime --no-daemon"
@@ -54,7 +55,7 @@
         ];
       };
       dwindle.preserve_split = true;
-      gestures.workspace_swipe = true;
+      # gestures.workspace_swipe = true;
 
       "$mainMod" = "SUPER";
       bind = [

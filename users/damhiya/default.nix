@@ -19,7 +19,7 @@
     imports = [
       ./shell.nix
       ./programs
-      ./x11
+      ./wayland
       ./mimeApps.nix
       ./theme.nix
     ];

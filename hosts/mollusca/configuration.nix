@@ -19,8 +19,6 @@
     ../../modules/fonts.nix
     ../../modules/networking.nix
     ../../modules/neovim
-    ../../modules/xmonad.nix
-    ../../modules/xinput.nix
     ./hardware-configuration.nix
 
     ../../users/damhiya
@@ -107,11 +105,13 @@
     # https://wiki.archlinux.org/title/HiDPI#Qt_5
     QT_AUTO_SCREEN_SCALE_FACTOR = "0";
     QT_ENABLE_HIGHDPI_SCALING = "0";
-    QT_SCALE_FACTOR = "1.8";
+    QT_SCALE_FACTOR = "1";
 
     LIBVA_DRIVER_NAME = ""; # use nvdec rather than vaapi
     BROWSER = "firefox";
     MOZ_USE_XINPUT2 = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1";
   };
 
   programs.dconf.enable = true;
