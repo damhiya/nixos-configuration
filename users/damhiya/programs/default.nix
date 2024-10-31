@@ -24,6 +24,7 @@
     duf
     file
     fastfetch
+    btop
 
     # development
     julia
