@@ -5,11 +5,14 @@
       monitor = [
         "eDP-1, 2560x1600@165, 0x0, 1.6"
       ];
-      exec-once = [ "kime --no-daemon" "hyprpaper" ];
+      exec-once = [
+        "kime --no-daemon"
+        "hyprpaper"
+      ];
       exec = [ "systemctl --user restart waybar.service" ];
       input = {
         kb_layout = "us";
-        repeat_rate = 20;   # 50ms
+        repeat_rate = 20; # 50ms
         repeat_delay = 165; # 165ms
         follow_mouse = 1;
         touchpad.natural_scroll = true;
@@ -40,15 +43,15 @@
       };
       animations = {
         enabled = true;
-          bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-          animation = [
-            "windows, 1, 7, myBezier"
-            "windowsOut, 1, 7, default, popin 80%"
-            "border, 1, 10, default"
-            "borderangle, 1, 8, default"
-            "fade, 1, 7, default"
-            "workspaces, 1, 6, default"
-          ];
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
+        ];
       };
       dwindle.preserve_split = true;
       gestures.workspace_swipe = true;

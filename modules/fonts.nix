@@ -1,6 +1,9 @@
-{ pkgs, ... }: {
-  fonts.packages = with pkgs;
-    builtins.attrValues iosevka-custom ++ [
+{ pkgs, ... }:
+{
+  fonts.packages =
+    with pkgs;
+    builtins.attrValues iosevka-custom
+    ++ [
       (nerdfonts.override { fonts = [ "Iosevka" ]; })
       stix-two
       julia-mono

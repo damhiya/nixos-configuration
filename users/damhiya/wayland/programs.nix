@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # https://arewewaylandyet.com/
   home.packages = with pkgs; [
     wl-clipboard

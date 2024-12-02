@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
-  imports =
-    [ ./xmonad ./polybar.nix ./picom.nix ./programs.nix ];
+{ pkgs, ... }:
+{
+  imports = [
+    ./xmonad
+    ./polybar.nix
+    ./picom.nix
+    ./programs.nix
+  ];
 }

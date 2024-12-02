@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.polybar = {
     enable = true;
     settings = {
@@ -37,9 +38,21 @@
         label-full = "  Full %consumption%W";
         label-charging = "%percentage%% %consumption%W";
         label-discharging = "%percentage%% %consumption%W";
-        animation-charging = [ "" "" "" "" "" ]; # nf-fa-battery
+        animation-charging = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ]; # nf-fa-battery
         animation-charging-framerate = 750;
-        ramp-capacity = [ "" "" "" "" "" ];
+        ramp-capacity = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
       "module/network" = {
         type = "internal/network";

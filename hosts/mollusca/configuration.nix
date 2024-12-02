@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   imports = [
     ../../modules/nix.nix
     ../../modules/home-manager.nix
@@ -29,7 +35,10 @@
       enable = true;
       editor = false;
     };
-    supportedFilesystems = [ "ntfs" "zfs" ];
+    supportedFilesystems = [
+      "ntfs"
+      "zfs"
+    ];
     kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/256
@@ -75,7 +84,7 @@
       # vdpau
       pkgs.libvdpau
       # vaapi
-      pkgs.intel-media-driver     # "iHD"
+      pkgs.intel-media-driver # "iHD"
       # pkgs.vaapiVdpau             # "vdpau"
       # pkgs.nvidia-vaapi-driver    # "nvidia"
     ];
@@ -180,4 +189,3 @@
 
   system.stateVersion = "22.05";
 }
-

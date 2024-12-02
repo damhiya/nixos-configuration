@@ -1,10 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # See following references:
   # - man 4 libinput
   # - https://unix.stackexchange.com/questions/58117/determine-xinput-device-manufacturer-and-model
 
   # General input config
-  services. libinput = {
+  services.libinput = {
     enable = true;
     # default accel speed 0.0 is usually too slow flow flat profile
     mouse = {

@@ -1,3 +1,9 @@
-{ pkgs, ... }: {
-  environment.defaultPackages = with pkgs; [ rsync strace curl wget ];
+{ pkgs, ... }:
+{
+  environment.defaultPackages = with pkgs; [
+    rsync
+    strace
+    curl
+    wget
+  ];
 }

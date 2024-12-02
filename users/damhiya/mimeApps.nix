@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   xdg.mimeApps = {
     enable = true;
     associations.added = {

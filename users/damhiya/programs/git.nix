@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.git = {
     enable = true;
     userName = "damhiya";
@@ -9,9 +10,15 @@
       line-numbers = true;
     };
     extraConfig = {
-      diff = { colorMoved = "default"; };
-      merge = { conflictstyle = "diff3"; };
-      init = { defaultBranch = "main"; };
+      diff = {
+        colorMoved = "default";
+      };
+      merge = {
+        conflictstyle = "diff3";
+      };
+      init = {
+        defaultBranch = "main";
+      };
     };
   };
 }

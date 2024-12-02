@@ -2,17 +2,22 @@
 
 final: prev:
 let
-  mkScript = name: attrs:
-    prev.substituteAll ({
-      src = ./. + "/${name}.sh";
-      dir = "bin";
-      inherit name;
-      isExecutable = true;
-      shell = prev.stdenv.shell;
-      coreutils = prev.coreutils-full;
-    } // attrs);
+  mkScript =
+    name: attrs:
+    prev.substituteAll (
+      {
+        src = ./. + "/${name}.sh";
+        dir = "bin";
+        inherit name;
+        isExecutable = true;
+        shell = prev.stdenv.shell;
+        coreutils = prev.coreutils-full;
+      }
+      // attrs
+    );
 
-in {
+in
+{
   scripts = {
 
     st = mkScript "st" { };

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   home.shellAliases = {
     grep = "grep --color";
     emc = "emacsclient -nc";

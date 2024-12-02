@@ -6,7 +6,10 @@
       experimental-features = nix-command flakes
     '';
     settings = {
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
       trusted-substituters = [
         "https://nix-community.cachix.org"
         "https://nixpkgs-wayland.cachix.org"

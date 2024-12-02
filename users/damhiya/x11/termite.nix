@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.termite = {
     enable = true;
     font = "Iosevka Fixed 11";

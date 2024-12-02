@@ -1,8 +1,18 @@
-{ pkgs, config, ... }@args: {
+{ pkgs, config, ... }@args:
+{
   users.users.damhiya = {
     isNormalUser = true;
     home = "/home/damhiya";
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "uinput" "docker" "vboxusers" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+      "input"
+      "uinput"
+      "docker"
+      "vboxusers"
+    ];
   };
 
   home-manager.users.damhiya = {

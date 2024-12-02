@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   imports = [
     ../../modules/nix.nix
     ../../modules/home-manager.nix
@@ -31,9 +37,9 @@
       # vdpau
       pkgs.libvdpau
       # vaapi
-      pkgs.intel-media-driver     # "iHD"
-      pkgs.vaapiVdpau             # "vdpau"
-      pkgs.nvidia-vaapi-driver    # "nvidia"
+      pkgs.intel-media-driver # "iHD"
+      pkgs.vaapiVdpau # "vdpau"
+      pkgs.nvidia-vaapi-driver # "nvidia"
     ];
   };
 
@@ -112,9 +118,14 @@
   users.users.damhiya = {
     isNormalUser = true;
     home = "/home/damhiya";
-    extraGroups = [ "wheel" "audio" "video" "docker" "vboxusers" ];
+    extraGroups = [
+      "wheel"
+      "audio"
+      "video"
+      "docker"
+      "vboxusers"
+    ];
   };
 
   system.stateVersion = "22.05";
 }
-

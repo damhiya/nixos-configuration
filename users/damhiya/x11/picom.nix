@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.picom = {
     enable = true;
     backend = "glx";
@@ -12,7 +13,10 @@
         method = "dual_kawase";
         strength = 10;
       };
-      blur-background-exclude = [ "class_g = 'firefox'" "class_g = 'zoom'" ];
+      blur-background-exclude = [
+        "class_g = 'firefox'"
+        "class_g = 'zoom'"
+      ];
     };
   };
 }
