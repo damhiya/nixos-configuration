@@ -150,49 +150,13 @@
         "type": "github"
       }
     },
-    "notsodeep-overlay": {
-      "inputs": {
-        "notsodeep-src": "notsodeep-src"
-      },
-      "locked": {
-        "lastModified": 1666425484,
-        "narHash": "sha256-NrIRhzzbMgeftd/cGY+GlY/HidSuwLjLd8r+VFr9jOw=",
-        "owner": "damhiya",
-        "repo": "notsodeep-overlay",
-        "rev": "bf94085ef1f61a3d1273aaf16bd5a70b6303cd5c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "damhiya",
-        "repo": "notsodeep-overlay",
-        "type": "github"
-      }
-    },
-    "notsodeep-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1559071595,
-        "narHash": "sha256-e6bc8pZwAWpe2t34gQgxpG1ZjO4/nc1MKAZtJvfX/Wc=",
-        "owner": "farukuzun",
-        "repo": "notsodeep",
-        "rev": "470532243bff92fd8314f3693c4748604078b484",
-        "type": "github"
-      },
-      "original": {
-        "owner": "farukuzun",
-        "repo": "notsodeep",
-        "rev": "470532243bff92fd8314f3693c4748604078b484",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "hhg-overlay": "hhg-overlay",
         "home-manager": "home-manager",
         "iosevka-custom": "iosevka-custom",
         "kmonad": "kmonad",
-        "nixpkgs": "nixpkgs_2",
-        "notsodeep-overlay": "notsodeep-overlay"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
