@@ -8,4 +8,10 @@
       allowedTCPPorts = [ 80 443 ];
     };
   };
+
+  systemd.services.SpoofDPI = {
+    description = "SpoofDPI";
+    serviceConfig = { ExecStart = "${pkgs.spoofdpi}/bin/spoofdpi"; };
+    wantedBy = [ "multi-user.target" ];
+  };
 }
