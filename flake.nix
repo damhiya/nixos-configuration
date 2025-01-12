@@ -16,13 +16,19 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    kmonad.url = "github:kmonad/kmonad?dir=nix";
-    kmonad.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    kmonad = {
+      url = "github:kmonad/kmonad?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hhg-overlay = {
+      url = "github:damhiya/hhg-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     iosevka-custom.url = "github:damhiya/iosevka-custom";
-    hhg-overlay.url = "github:damhiya/hhg-overlay";
-    hhg-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -31,8 +37,8 @@
       nixpkgs,
       home-manager,
       kmonad,
-      iosevka-custom,
       hhg-overlay,
+      iosevka-custom,
     }:
     let
       baseModule = {
@@ -42,8 +48,8 @@
         ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         nixpkgs.overlays = [
-          iosevka-custom.overlays.default
           hhg-overlay.overlays.default
+          iosevka-custom.overlays.default
           (import ./scripts/overlay.nix)
         ];
       };
