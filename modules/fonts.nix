@@ -4,7 +4,7 @@
     with pkgs;
     builtins.attrValues iosevka-custom
     ++ [
-      (nerdfonts.override { fonts = [ "Iosevka" ]; })
+      nerd-fonts.iosevka
       stix-two
       julia-mono
       sarasa-gothic
@@ -13,6 +13,6 @@
       source-han-sans
       source-han-serif
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
     ];
 }
