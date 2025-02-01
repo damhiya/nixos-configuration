@@ -31,7 +31,7 @@
     julia
     nixfmt-rfc-style
     shellcheck
-    loc
+    tokei
     neovide
     zed-editor
 
