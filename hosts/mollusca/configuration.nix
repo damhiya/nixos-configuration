@@ -134,7 +134,6 @@
         device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
         defcfg = {
           enable = true;
-          compose.key = null;
           fallthrough = true;
           allowCommands = false;
         };
@@ -163,7 +162,6 @@
         device = "/dev/input/by-id/usb-PFU_Limited_HHKB-Classic-event-kbd";
         defcfg = {
           enable = true;
-          compose.key = null;
           fallthrough = true;
           allowCommands = false;
         };

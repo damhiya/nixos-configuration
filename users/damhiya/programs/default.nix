@@ -36,7 +36,7 @@
     zed-editor
 
     # document
-    okular
+    kdePackages.okular
     zathura
     libreoffice
     # pdfpc
@@ -71,8 +71,8 @@
     cool-retro-term
     happy-hacking-gnu
     pavucontrol
-    dolphin
-    filelight
+    kdePackages.dolphin
+    kdePackages.filelight
     waifu2x-converter-cpp
     tetrio-desktop
     osu-lazer

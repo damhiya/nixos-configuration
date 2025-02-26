@@ -21,19 +21,20 @@
     "happy-hacking-gnu-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1682425107,
-        "narHash": "sha256-tTSFMKjrop+mlk9jwYjlgTuC8kzw06lr1Txg1awkVyY=",
+        "lastModified": 1676609976,
+        "narHash": "sha256-K2ABYJXY6/iH9YqOD3rauXrbuyT8xrG61fbATrJ6JKM=",
         "ref": "refs/heads/master",
-        "rev": "0045faf17c8e3fd51f114124ed7eef51d3c97bb0",
-        "revCount": 33,
+        "rev": "85dfbba4cfc11a34f2dd8e984e9d46112f04a7e1",
+        "revCount": 31,
         "submodules": true,
         "type": "git",
-        "url": "https://gitlab.com/dom/happy-hacking-gnu.git??rev=85dfbba4cfc11a34f2dd8e984e9d46112f04a7e1"
+        "url": "https://gitlab.com/dom/happy-hacking-gnu.git"
       },
       "original": {
+        "rev": "85dfbba4cfc11a34f2dd8e984e9d46112f04a7e1",
         "submodules": true,
         "type": "git",
-        "url": "https://gitlab.com/dom/happy-hacking-gnu.git??rev=85dfbba4cfc11a34f2dd8e984e9d46112f04a7e1"
+        "url": "https://gitlab.com/dom/happy-hacking-gnu.git"
       }
     },
     "hhg-overlay": {
@@ -44,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1686841510,
-        "narHash": "sha256-TZP02zKHKUEtHubL6/SuYOtGPW/cRtTKqjqwX7HD54k=",
+        "lastModified": 1740605945,
+        "narHash": "sha256-NhJ9athRlfgGH80NGbzHfd1X/rHHlSmH5rMi+epobOA=",
         "owner": "damhiya",
         "repo": "hhg-overlay",
-        "rev": "da9cc9a11b60ebd15baa78d77d90a77fbf43251b",
+        "rev": "50f75da73e49158a8b967bc1bfa3f514cdf52a87",
         "type": "github"
       },
       "original": {
@@ -64,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738378034,
-        "narHash": "sha256-mldSa2NhDlnjqeSSFTNnkXIDrCLltpJfhrHUMBBKEiY=",
+        "lastModified": 1740579671,
+        "narHash": "sha256-Dwt/3KknOQ4bgFG5YjqDT7oWRy27rPpDjAi2P0ok1zw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "801ddd8693481866c2cfb1efd44ddbae778ea572",
+        "rev": "53c587d263f94aaf6a281745923c76bbec62bcf3",
         "type": "github"
       },
       "original": {
@@ -104,11 +105,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1737901920,
-        "narHash": "sha256-KTWNHAR8FaavuDCWoq0tOR9BP1/zMQO1Ctw1eRKYSNY=",
+        "lastModified": 1739962668,
+        "narHash": "sha256-ns7btNiKU6+JViXt6k3g7iQp2Xyy0ZCi3wf59y3lS6s=",
         "owner": "kmonad",
         "repo": "kmonad",
-        "rev": "b527946b680ee2af25b99fc6bf9386cf175cc02f",
+        "rev": "356c69f45b8cbb3c875616c91892f8b28ce40c13",
         "type": "github"
       },
       "original": {
@@ -136,11 +137,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1738142207,
-        "narHash": "sha256-NGqpVVxNAHwIicXpgaVqJEJWeyqzoQJ9oc8lnK9+WC4=",
+        "lastModified": 1740367490,
+        "narHash": "sha256-WGaHVAjcrv+Cun7zPlI41SerRtfknGQap281+AakSAw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9d3ae807ebd2981d593cddd0080856873139aa40",
+        "rev": "0196c0175e9191c474c26ab5548db27ef5d34b05",
         "type": "github"
       },
       "original": {
@@ -167,11 +168,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738376888,
-        "narHash": "sha256-S6ErHxkSm0iA7ZMsjjDaASWxbELYcdfv8BhOkkj1rHw=",
+        "lastModified": 1740536993,
+        "narHash": "sha256-3YI+1ONZ28chM19Hep9Z+TSyiybYf/1VC/gwImVZKUw=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "83284068670d5ae4a43641c4afb150f3446be70d",
+        "rev": "9f05c0655de9dc2c7b60b689447c48abb9190bf8",
         "type": "github"
       },
       "original": {
