@@ -105,8 +105,9 @@
 
   environment.variables = {
     # https://wiki.archlinux.org/title/HiDPI#Qt_5
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    QT_ENABLE_HIGHDPI_SCALING = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "0";
+    QT_ENABLE_HIGHDPI_SCALING = "0";
+    QT_SCALE_FACTOR = "1.8";
 
     LIBVA_DRIVER_NAME = ""; # use nvdec rather than vaapi
     BROWSER = "firefox";
