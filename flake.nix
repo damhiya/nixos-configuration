@@ -28,10 +28,6 @@
       url = "github:damhiya/hhg-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     iosevka-custom.url = "github:damhiya/iosevka-custom";
   };
 
@@ -42,7 +38,6 @@
       home-manager,
       kmonad,
       hhg-overlay,
-      rust-overlay,
       iosevka-custom,
     }:
     let
@@ -56,23 +51,6 @@
           hhg-overlay.overlays.default
           iosevka-custom.overlays.default
           (import ./scripts/overlay.nix)
-          (
-            # https://github.com/Riey/kime/issues/688
-            final: prev:
-            let
-              rustChannel = rust-overlay.packages.x86_64-linux.rust_1_81_0;
-            in
-            {
-              kime = prev.kime.override {
-                rustPlatform = prev.makeRustPlatform {
-                  rustc = rustChannel;
-                  cargo = rustChannel;
-                };
-                rustc = rustChannel;
-                cargo = rustChannel;
-              };
-            }
-          )
         ];
       };
     in
