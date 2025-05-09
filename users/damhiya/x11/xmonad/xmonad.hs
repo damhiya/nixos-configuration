@@ -34,11 +34,17 @@ import Graphics.X11.ExtraTypes.XF86
 restartXMonad :: X ()
 restartXMonad = spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi"
 
+captureOutput :: String
+captureOutput = "~/Pictures/Screenshots/screenshot.png"
+
 captureWindow :: Window -> X ()
-captureWindow w = spawn [fmt|import -border -screen -window {w} ~/Pictures/Screenshots/screenshot.png|]
+captureWindow w = spawn [fmt|import -border -screen -window {w} {captureOutput}|]
+
+captureRegion :: X ()
+captureRegion = spawn [fmt|import {captureOutput}|]
 
 captureRoot :: X ()
-captureRoot = spawn "import -window root ~/Pictures/Screenshots/screenshot.png"
+captureRoot = spawn [fmt|import -window root {captureOutput}|]
 
 type LightConfig = (String, Int)
 
@@ -118,7 +124,8 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   , ((shiftMask            , xF86XK_MonBrightnessDown ), modifyLight keyboardBacklight False)
 
   , ((0                    , xK_Print ), withFocused captureWindow)
-  , ((modMask              , xK_Print ), captureRoot)
+  , ((controlMask          , xK_Print ), captureRegion)
+  , ((shiftMask            , xK_Print ), captureRoot)
   ]
   ++ [((modMask              , k), windows (W.greedyView i))
       | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
