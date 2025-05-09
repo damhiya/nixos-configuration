@@ -56,8 +56,11 @@ modifyAudio :: Bool -> X ()
 modifyAudio b = spawn [fmt|pactl set-sink-volume @DEFAULT_SINK@ {sign}3%|]
   where sign = if b then '+' else '-'
 
-toggleAudio :: X ()
-toggleAudio = spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+toggleAudioMute :: X ()
+toggleAudioMute = spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+toggleAudioMicMute :: X ()
+toggleAudioMicMute = spawn "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 -- my config
 myNormalBorderColor   = "#FFFFFF"
@@ -106,7 +109,8 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
 
   , ((0                    , xF86XK_AudioRaiseVolume), modifyAudio True)
   , ((0                    , xF86XK_AudioLowerVolume), modifyAudio False)
-  , ((0                    , xF86XK_AudioMute       ), toggleAudio)
+  , ((0                    , xF86XK_AudioMute       ), toggleAudioMute)
+  , ((0                    , xF86XK_AudioMicMute    ), toggleAudioMicMute)
 
   , ((0                    , xF86XK_MonBrightnessUp   ), modifyLight monitorBacklight True)
   , ((0                    , xF86XK_MonBrightnessDown ), modifyLight monitorBacklight False)
