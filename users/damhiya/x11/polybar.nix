@@ -5,6 +5,7 @@
     settings = {
       "bar/bottom" = {
         bottom = true;
+        wm-restack = "generic"; # https://github.com/polybar/polybar/issues/2205
         width = "100%:-6";
         height = "40";
         offset-x = "3";
