@@ -59,6 +59,7 @@
     zulip
     discord
     slack
+    mattermost-desktop
     element-desktop
     session-desktop
     zoom-us
