@@ -16,6 +16,9 @@
     };
   };
 
+  # tailscale
+  services.tailscale.enable = true;
+
   # systemd.services.SpoofDPI = {
   #   description = "SpoofDPI";
   #   serviceConfig = {
