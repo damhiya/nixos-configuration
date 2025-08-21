@@ -38,6 +38,7 @@
     supportedFilesystems = [
       "ntfs"
       "zfs"
+      "nfs"
     ];
     kernelPackages = pkgs.linuxPackages;
     kernelParams = [
