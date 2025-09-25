@@ -80,7 +80,7 @@ myLayoutHook = lessBorders OnlyScreenFloat (avoidStruts tiled ||| noBorders Full
     delta   = 1/32
     ratio   = 1/2
 
-myWorkspaces          = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"] 
+myWorkspaces          = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ"] 
 myModMask             = mod4Mask
 
 myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
@@ -127,14 +127,16 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   , ((controlMask          , xK_Print ), captureRegion)
   , ((shiftMask            , xK_Print ), captureRoot)
   ]
-  ++ [((modMask              , k), windows (W.greedyView i))
-      | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
-  ++ [((modMask .|. shiftMask, k), windows $ W.shift      i) | (i,k) <- zip (workspaces conf) [xK_1 .. xK_9]]
-
-  ++
-  [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-      , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+  ++ [ ((modMask              , k), windows (W.greedyView i))
+     | (i,k) <- zip (workspaces conf) ([xK_1 .. xK_9] ++ [xK_0])
+     ]
+  ++ [ ((modMask .|. shiftMask, k), windows $ W.shift      i)
+     | (i,k) <- zip (workspaces conf) ([xK_1 .. xK_9] ++ [xK_0])
+     ]
+  ++ [ ((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+     | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+     , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+     ]
 
 myBorderWidth         = 10
 
