@@ -91,9 +91,8 @@
     ];
   };
   environment.systemPackages = with pkgs; [
-    cudaPackages.cudatoolkit
     nvtopPackages.full
-    glxinfo
+    mesa-demos
     vulkan-tools
     glmark2
   ];

@@ -55,7 +55,7 @@
 
     # networking
     yt-dlp
-    tor-browser-bundle-bin
+    tor-browser
     zulip
     discord
     slack
@@ -63,12 +63,12 @@
     element-desktop
     session-desktop
     zoom-us
-    tdesktop
+    telegram-desktop
     qbittorrent
 
     # others
     helvum
-    bitwarden
+    bitwarden-desktop
     cool-retro-term
     happy-hacking-gnu
     pavucontrol

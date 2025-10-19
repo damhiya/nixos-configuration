@@ -67,7 +67,7 @@
   environment.systemPackages = with pkgs; [
     cudaPackages_11_2.cudatoolkit
     nvtopPackages.full
-    glxinfo
+    mesa-demos
     vulkan-tools
     glmark2
     pulsemixer
