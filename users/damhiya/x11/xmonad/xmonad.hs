@@ -38,13 +38,13 @@ captureOutput :: String
 captureOutput = "~/Pictures/Screenshots/screenshot.png"
 
 captureWindow :: Window -> X ()
-captureWindow w = spawn [fmt|import -border -screen -window {w} {captureOutput}|]
+captureWindow w = spawn [fmt|import -border -screen -window {w} {captureOutput} && xclip -selection clipboard -t image/png -i {captureOutput}|]
 
 captureRegion :: X ()
-captureRegion = spawn [fmt|import {captureOutput}|]
+captureRegion = spawn [fmt|import {captureOutput} && xclip -selection clipboard -t image/png -i {captureOutput}|]
 
 captureRoot :: X ()
-captureRoot = spawn [fmt|import -window root {captureOutput}|]
+captureRoot = spawn [fmt|import -window root {captureOutput} && xclip -selection clipboard -t image/png -i {captureOutput}|]
 
 type LightConfig = (String, Int)
 
