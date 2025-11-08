@@ -20,7 +20,8 @@
 
       # okular
       "application/pdf" = "okularApplication_pdf.desktop";
-      "image/bnd.djvu" = "okularApplication_djvu.desktop";
+      "image/vnd.djvu" = "okularApplication_djvu.desktop";
+      "image/vnd.djvu+multipage" = "okularApplication_djvu.desktop";
 
       # nomacs
       "image/png" = "org.nomacs.ImageLounge.desktop";
