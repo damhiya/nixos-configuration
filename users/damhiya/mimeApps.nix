@@ -20,6 +20,7 @@
 
       # okular
       "application/pdf" = "okularApplication_pdf.desktop";
+      "application/epub" = "okularApplication_epub.desktop";
       "image/vnd.djvu" = "okularApplication_djvu.desktop";
       "image/vnd.djvu+multipage" = "okularApplication_djvu.desktop";
 
