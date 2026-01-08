@@ -20,16 +20,6 @@ let g:neovide_scroll_animation_length = 0.05
 " lightline
 set laststatus=2
 
-" nvim-treesitter
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-  sync_install = false,
-  auto_install = false,
-  highlight = { enable = true },
-  additional_vim_regex_highlighting = false
-}
-EOF
-
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
