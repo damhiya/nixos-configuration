@@ -28,8 +28,8 @@
     btop
 
     # development
-    julia
-    nixfmt-rfc-style
+    julia-bin
+    nixfmt
     shellcheck
     tokei
     neovide

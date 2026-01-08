@@ -29,7 +29,7 @@
     killall
     tree
     tmux
-    scripts.st
-    scripts.nixos-profile
+    script-st
+    script-nixos-profile
   ];
 }

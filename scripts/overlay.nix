@@ -16,13 +16,9 @@ let
     };
 in
 {
-  scripts = {
+  script-st = mkScript "st" { };
 
-    st = mkScript "st" { };
+  script-nixos-profile = mkScript "nixos-profile" { inherit (prev) findutils gawk jq; };
 
-    nixos-profile = mkScript "nixos-profile" { inherit (prev) findutils gawk jq; };
-
-    hyprcwd = mkScript "hyprcwd" { inherit (prev) hyprland jq; };
-
-  };
+  script-hyprcwd = mkScript "hyprcwd" { inherit (prev) hyprland jq; };
 }
