@@ -111,7 +111,7 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
   , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
 
   , ((modMask .|. shiftMask, xK_q     ), spawn "killall kime" >> io exitSuccess)
-  , ((modMask              , xK_q     ), restartXMonad)
+  , ((modMask .|. shiftMask, xK_r     ), restartXMonad)
 
   , ((0                    , xF86XK_AudioRaiseVolume), modifyAudio True)
   , ((0                    , xF86XK_AudioLowerVolume), modifyAudio False)
@@ -134,7 +134,7 @@ myKeys conf@(XConfig {modMask = modMask}) = M.fromList $
      | (i,k) <- zip (workspaces conf) ([xK_1 .. xK_9] ++ [xK_0])
      ]
   ++ [ ((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-     | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+     | (key, sc) <- zip [xK_a, xK_s, xK_d] [0..]
      , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
      ]
 
