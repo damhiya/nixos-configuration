@@ -49,14 +49,14 @@ captureRoot = spawn [fmt|import -window root {captureOutput} && xclip -selection
 type LightConfig = (String, Int)
 
 monitorBacklight :: LightConfig
-monitorBacklight = ("sysfs/backlight/nvidia_0", 10)
+monitorBacklight = ("nvidia_0", 10)
 
 keyboardBacklight :: LightConfig
-keyboardBacklight = ("sysfs/leds/tpacpi::kbd_backlight", 50)
+keyboardBacklight = ("tpacpi::kbd_backlight", 1)
 
 modifyLight :: LightConfig -> Bool -> X ()
-modifyLight (dev, step) b = spawn [fmt|light -s {dev} -{inc} {step}|]
-  where inc = if b then 'A' else 'U'
+modifyLight (dev, step) b = spawn [fmt|brightnessctl -d {dev} set {step}{inc}|]
+  where inc = if b then '+' else '-'
 
 modifyAudio :: Bool -> X ()
 modifyAudio b = spawn [fmt|pactl set-sink-volume @DEFAULT_SINK@ {sign}3%|]

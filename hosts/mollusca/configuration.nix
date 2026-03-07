@@ -114,7 +114,6 @@
     MOZ_USE_XINPUT2 = "1";
   };
 
-  programs.light.enable = true;
   programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;

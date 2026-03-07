@@ -31,5 +31,6 @@
     tmux
     script-st
     script-nixos-profile
+    brightnessctl
   ];
 }
