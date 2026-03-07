@@ -43,7 +43,6 @@
       wireplumber = {
         format = "{node_name}  {icon} {volume}%";
         format-muted = "{node_name}  󰖁"; # nf-md-volume_off
-        on-click = "helvum";
         format-icons = [
           "󰕿"
           "󰖀"
