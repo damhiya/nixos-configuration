@@ -9,7 +9,7 @@
         "kime --no-daemon"
         "hyprpaper"
       ];
-      exec = [ "systemctl --user restart waybar.service" ];
+      exec = [ "waybar" ];
       input = {
         kb_layout = "us";
         repeat_rate = 20; # 50ms
