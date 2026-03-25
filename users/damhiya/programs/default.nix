@@ -34,6 +34,7 @@
     tokei
     neovide
     zed-editor
+    claude-code
 
     # document
     kdePackages.okular
