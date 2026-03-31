@@ -7,7 +7,7 @@
         shell = "fish";
         font = "Iosevka Fixed:size=11";
       };
-      colors = {
+      colors-dark = {
         alpha = "0.6";
         foreground = "ffffff";
         background = "000000";
