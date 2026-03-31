@@ -40,8 +40,6 @@
     kdePackages.okular
     zathura
     libreoffice
-    # pdfpc
-    # zotero
     calibre
     pdfgrep
 
@@ -52,10 +50,9 @@
     imagemagick
     gcolor3
     nomacs
-    # cmus
+    yt-dlp
 
     # networking
-    yt-dlp
     tor-browser
     zulip
     discord
@@ -69,13 +66,9 @@
 
     # others
     bitwarden-desktop
-    cool-retro-term
     happy-hacking-gnu
-    pavucontrol
     kdePackages.dolphin
     kdePackages.filelight
-    waifu2x-converter-cpp
-    tetrio-desktop
     osu-lazer
     steam
     spotify
