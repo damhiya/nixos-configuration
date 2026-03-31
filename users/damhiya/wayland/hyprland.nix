@@ -9,8 +9,8 @@
       exec-once = [
         "kime --no-daemon"
         "hyprpaper"
+        "waybar"
       ];
-      exec = [ "waybar" ];
       input = {
         kb_layout = "us";
         repeat_rate = 20; # 50ms
