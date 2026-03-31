@@ -20,5 +20,5 @@ in
 
   script-nixos-profile = mkScript "nixos-profile" { inherit (prev) findutils gawk jq; };
 
-  script-hyprcwd = mkScript "hyprcwd" { inherit (prev) hyprland jq; };
+  script-hyprcwd = mkScript "hyprcwd" { inherit (prev) hyprland jq procps; };
 }
