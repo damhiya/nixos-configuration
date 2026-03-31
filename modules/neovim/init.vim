@@ -14,7 +14,7 @@ set hlsearch
 set cindent
 set autoindent
 set smartindent
-set guifont=Iosevka\ Fixed:h9
+set guifont=Iosevka\ Fixed:h11
 let g:neovide_scroll_animation_length = 0.05
 
 " lightline
