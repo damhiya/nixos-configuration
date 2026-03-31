@@ -15,6 +15,7 @@
       size = 10;
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    gtk4.theme = config.gtk.theme;
     theme = {
       package = pkgs.kdePackages.breeze-gtk;
       name = "breeze";
