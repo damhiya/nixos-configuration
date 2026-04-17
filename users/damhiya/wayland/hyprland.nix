@@ -62,13 +62,14 @@
 
       "$mainMod" = "SUPER";
       bind = [
-        ", XF86MonBrightnessUp, exec, light -A 10"
-        ", XF86MonBrightnessDown, exec, light -U 10"
-        "SHIFT, XF86MonBrightnessUp, exec, light -s sysfs/leds/tpacpi::kbd_backlight -A 50"
-        "SHIFT, XF86MonBrightnessDown, exec, light -s sysfs/leds/tpacpi::kbd_backlight -U 50"
+        ", XF86MonBrightnessUp, exec, brightnessctl -d nvidia_0 set 10+"
+        ", XF86MonBrightnessDown, exec, brightnessctl -d nvidia_0 set 10-"
+        "SHIFT, XF86MonBrightnessUp, exec, brightnessctl -d tpacpi::kbd_backlight set 1+"
+        "SHIFT, XF86MonBrightnessDown, exec, brightnessctl -d tpacpi::kbd_backlight set 1-"
         ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -3%"
+        ", XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +3%"
+        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -3%"
 
         "$mainMod SHIFT, Return, exec, foot -D \"$(hyprcwd || echo \"$HOME\")\""
         "$mainMod, Return, fullscreen"
