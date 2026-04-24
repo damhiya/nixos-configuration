@@ -7,5 +7,7 @@
     fuzzel
     hyprpaper
     script-hyprcwd
+    grim
+    slurp
   ];
 }

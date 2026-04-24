@@ -74,6 +74,10 @@
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +3%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -3%"
 
+        # Screenshot
+        "CTRL, Print, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/screenshot.png"
+        "    , Print, exec, grim -g \"$(hyprctl activewindow -j | jq -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"')\" ~/Pictures/Screenshots/screenshot.png"
+
         "$mainMod SHIFT, Return, exec, foot -D \"$(hyprcwd || echo \"$HOME\")\""
         "$mainMod, Return, fullscreen"
         "$mainMod, M, fullscreen, 1"
