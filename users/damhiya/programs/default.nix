@@ -26,6 +26,7 @@
     file
     fastfetch
     btop
+    jq
 
     # development
     julia-bin
