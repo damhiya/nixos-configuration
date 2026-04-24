@@ -62,10 +62,13 @@
 
       "$mainMod" = "SUPER";
       bind = [
+        # Brightness
         ", XF86MonBrightnessUp, exec, brightnessctl -d nvidia_0 set 10+"
         ", XF86MonBrightnessDown, exec, brightnessctl -d nvidia_0 set 10-"
         "SHIFT, XF86MonBrightnessUp, exec, brightnessctl -d tpacpi::kbd_backlight set 1+"
         "SHIFT, XF86MonBrightnessDown, exec, brightnessctl -d tpacpi::kbd_backlight set 1-"
+
+        # Audio volume
         ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
         ", XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +3%"
