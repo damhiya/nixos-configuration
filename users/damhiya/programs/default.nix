@@ -36,6 +36,7 @@
     neovide
     zed-editor
     claude-code
+    codex
 
     # document
     kdePackages.okular
