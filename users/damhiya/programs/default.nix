@@ -12,7 +12,11 @@
 
   programs = {
     vscode.enable = true;
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      configPath = ".mozilla/firefox";
+      # TODO: Use configPath = "${config.xdg.configHome}/mozilla/firefox"
+    };
     chromium.enable = true;
     mpv.enable = true;
   };
