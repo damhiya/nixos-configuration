@@ -38,6 +38,7 @@
       "zfs"
       "nfs"
     ];
+    zfs.forceImportRoot = false;
     kernelPackages = pkgs.linuxPackages;
     kernelParams = [
       # https://github.com/NVIDIA/open-gpu-kernel-modules/issues/256
