@@ -46,6 +46,9 @@
       misc = {
         force_default_wallpaper = 2;
       };
+      debug = {
+        disable_logs = false;
+      };
       animations = {
         enabled = true;
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
