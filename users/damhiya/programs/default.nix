@@ -23,7 +23,8 @@
 
   home.packages = with pkgs; [
     # CLI utilities
-    silver-searcher
+    ripgrep
+    fzf
     bat
     delta
     duf

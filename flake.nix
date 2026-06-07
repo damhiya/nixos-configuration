@@ -47,11 +47,16 @@
           kmonad.nixosModules.default
         ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-        nixpkgs.overlays = [
-          hhg-overlay.overlays.default
-          iosevka-custom.overlays.default
-          (import ./scripts/overlay.nix)
-        ];
+        nixpkgs = {
+          overlays = [
+            hhg-overlay.overlays.default
+            iosevka-custom.overlays.default
+            (import ./scripts/overlay.nix)
+          ];
+          config.permittedInsecurePackages = [
+            "electron-39.8.10"
+          ];
+        };
       };
     in
     {
