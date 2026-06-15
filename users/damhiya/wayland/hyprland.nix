@@ -100,6 +100,7 @@
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod SHIFT, L, movewindow, r"
         "$mainMod, TAB, cyclenext"
+        "$mainMod SHIFT, TAB, cyclenext, prev"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
