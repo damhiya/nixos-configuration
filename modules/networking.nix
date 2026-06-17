@@ -14,19 +14,4 @@
       ];
     };
   };
-
-  # tailscale
-  services.tailscale.enable = true;
-
-  # systemd.services.SpoofDPI = {
-  #   description = "SpoofDPI";
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.spoofdpi}/bin/spoofdpi";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  # };
-  services.zapret = {
-    enable = true;
-    params = [ "--dpi-desync=disorder2" ];
-  };
 }

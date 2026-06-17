@@ -18,6 +18,8 @@
     ../../modules/locale.nix
     ../../modules/fonts.nix
     ../../modules/networking.nix
+    ../../modules/tailscale.nix
+    ../../modules/zapret.nix
     ../../modules/neovim
     ./hardware-configuration.nix
     ./kmonad.nix
