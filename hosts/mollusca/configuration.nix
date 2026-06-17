@@ -24,6 +24,9 @@
     ../../users/damhiya
   ];
 
+  # hostPlatform
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   # boot
   boot = {
     loader.systemd-boot = {

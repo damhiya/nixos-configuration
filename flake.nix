@@ -48,7 +48,6 @@
         ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         nixpkgs = {
-          hostPlatform = "x86_64-linux";
           overlays = [
             hhg-overlay.overlays.default
             iosevka-custom.overlays.default
