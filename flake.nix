@@ -48,6 +48,7 @@
         ];
         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         nixpkgs = {
+          hostPlatform = "x86_64-linux";
           overlays = [
             hhg-overlay.overlays.default
             iosevka-custom.overlays.default
@@ -62,7 +63,6 @@
     {
 
       nixosConfigurations.lambdaPi = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           baseModule
           ./hosts/lambdaPi/configuration.nix
@@ -70,7 +70,6 @@
       };
 
       nixosConfigurations.mollusca = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           baseModule
           ./hosts/mollusca/configuration.nix
