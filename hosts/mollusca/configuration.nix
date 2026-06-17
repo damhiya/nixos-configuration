@@ -103,10 +103,6 @@
   console.keyMap = "us";
 
   programs.dconf.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
   services.openssh.enable = true;
   services.printing.enable = true;
   services.fprintd.enable = true;
