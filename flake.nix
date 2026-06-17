@@ -62,13 +62,6 @@
     in
     {
 
-      nixosConfigurations.lambdaPi = nixpkgs.lib.nixosSystem {
-        modules = [
-          baseModule
-          ./hosts/lambdaPi/configuration.nix
-        ];
-      };
-
       nixosConfigurations.mollusca = nixpkgs.lib.nixosSystem {
         modules = [
           baseModule
