@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./git.nix
@@ -14,8 +14,7 @@
     vscode.enable = true;
     firefox = {
       enable = true;
-      configPath = ".mozilla/firefox";
-      # TODO: Use configPath = "${config.xdg.configHome}/mozilla/firefox"
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
     };
     chromium.enable = true;
     mpv.enable = true;
