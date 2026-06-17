@@ -115,17 +115,5 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  users.users.damhiya = {
-    isNormalUser = true;
-    home = "/home/damhiya";
-    extraGroups = [
-      "wheel"
-      "audio"
-      "video"
-      "docker"
-      "vboxusers"
-    ];
-  };
-
   system.stateVersion = "22.05";
 }
