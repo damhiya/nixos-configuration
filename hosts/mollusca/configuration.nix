@@ -24,9 +24,6 @@
     ../../users/damhiya
   ];
 
-  # allow unfree
-  nixpkgs.config.allowUnfree = true;
-
   # boot
   boot = {
     loader.systemd-boot = {

@@ -54,9 +54,10 @@
             iosevka-custom.overlays.default
             (import ./scripts/overlay.nix)
           ];
-          config.permittedInsecurePackages = [
-            "electron-39.8.10"
-          ];
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [ "electron-39.8.10" ];
+          };
         };
       };
     in
