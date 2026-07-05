@@ -65,7 +65,7 @@
     slack
     mattermost-desktop
     element-desktop
-    session-desktop
+    signal-desktop
     zoom-us
     telegram-desktop
     qbittorrent
