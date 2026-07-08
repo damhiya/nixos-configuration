@@ -9,5 +9,6 @@
     script-hyprcwd
     grim
     slurp
+    libinput
   ];
 }
