@@ -42,6 +42,7 @@ in
     importantPrefixes = [
       "monitor"
       "config"
+      "device"
       "curve"
       "animation"
       "bind"
@@ -135,6 +136,23 @@ in
           preserve_split = true;
         };
       };
+
+      device = [
+        {
+          name = "kensington-slimblade-pro-trackball(wired)-kensington-slimblade-pro-trackball(wired)";
+          scroll_method = "on_button_down";
+          scroll_button = 275;
+          scroll_button_lock = true;
+          scroll_factor = 0.6;
+        }
+        {
+          name = "kensington-slimblade-pro(2.4ghz-receiver)-kensington-slimblade-pro-trackball(2.4ghz-receiver)";
+          scroll_method = "on_button_down";
+          scroll_button = 275;
+          scroll_button_lock = true;
+          scroll_factor = 0.6;
+        }
+      ];
 
       curve = {
         _args = [
