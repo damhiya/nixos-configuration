@@ -6,6 +6,7 @@
     wf-recorder
     fuzzel
     hyprpaper
+    hyprpicker
     script-hyprcwd
     grim
     slurp
