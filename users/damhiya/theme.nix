@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 {
   home.pointerCursor = {
+    enable = true;
     package = pkgs.kdePackages.breeze;
     name = "breeze_cursors";
     size = 32;
