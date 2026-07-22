@@ -9,7 +9,11 @@
       merge.conflictstyle = "diff3";
       init.defaultBranch = "main";
     };
-    signing.format = null;
+    signing = {
+      signByDefault = true;
+      format = "ssh";
+      key = "~/.ssh/id_ed25519";
+    };
   };
 
   programs.delta = {
