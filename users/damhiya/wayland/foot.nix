@@ -9,6 +9,7 @@
       };
       colors-dark = {
         alpha = "0.6";
+        blur="yes";
         foreground = "ffffff";
         background = "000000";
 
