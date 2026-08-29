@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
+  programs.nano.enable = false;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     configure = {
       packages.all = with pkgs.vimPlugins; {
         start = [
-          nvim-treesitter.withAllGrammars
           lightline-vim
           nerdtree
           vim-surround

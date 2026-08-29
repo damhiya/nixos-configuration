@@ -20,7 +20,7 @@
     ../../modules/networking.nix
     ../../modules/tailscale.nix
     ../../modules/zapret.nix
-    ../../modules/neovim
+    ../../modules/editor
     ./hardware-configuration.nix
     ./kmonad.nix
 
