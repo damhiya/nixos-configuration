@@ -14,6 +14,9 @@
       function nv
         neovide $argv &; disown
       end
+      function ok
+        okular $argv &>/dev/null &; disown
+      end
     '';
   };
 
