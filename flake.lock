@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "aquamarine-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791041429,
+        "narHash": "sha256-Y/Q4JtMo6nHB6XS1LPSfK7Y4AnuNl9jci/5sCps1MRc=",
+        "owner": "damhiya",
+        "repo": "aquamarine",
+        "rev": "52ea11f06dd492f34b3cc0b39a9c805beecafcff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "damhiya",
+        "ref": "fix/restore-stale-crtcs",
+        "repo": "aquamarine",
+        "type": "github"
+      }
+    },
     "happy-hacking-gnu-src": {
       "flake": false,
       "locked": {
@@ -134,6 +151,7 @@
     },
     "root": {
       "inputs": {
+        "aquamarine-src": "aquamarine-src",
         "hhg-overlay": "hhg-overlay",
         "home-manager": "home-manager",
         "iosevka-custom": "iosevka-custom",

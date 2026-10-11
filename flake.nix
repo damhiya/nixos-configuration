@@ -14,6 +14,10 @@
 
   inputs = {
     nixpkgs.url = "github:damhiya/nixpkgs/nixos-unstable";
+    aquamarine-src = {
+      url = "github:damhiya/aquamarine/fix/restore-stale-crtcs";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +37,7 @@
     {
       self,
       nixpkgs,
+      aquamarine-src,
       home-manager,
       kmonad,
       hhg-overlay,
@@ -50,6 +55,11 @@
             hhg-overlay.overlays.default
             iosevka-custom.overlays.default
             (import ./scripts/overlay.nix)
+            (_final: prev: {
+              aquamarine = prev.aquamarine.overrideAttrs (_old: {
+                src = aquamarine-src;
+              });
+            })
           ];
           config = {
             allowUnfree = true;
