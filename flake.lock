@@ -3,11 +3,11 @@
     "aquamarine-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1791041429,
-        "narHash": "sha256-Y/Q4JtMo6nHB6XS1LPSfK7Y4AnuNl9jci/5sCps1MRc=",
+        "lastModified": 1791717347,
+        "narHash": "sha256-VSSAaP81JNpWXSj5LwzV/PyqCOdlbl6RlD2heKVYvu4=",
         "owner": "damhiya",
         "repo": "aquamarine",
-        "rev": "52ea11f06dd492f34b3cc0b39a9c805beecafcff",
+        "rev": "1f06b45c55c34bbd3e7558bb75da895db7c97822",
         "type": "github"
       },
       "original": {
