@@ -62,10 +62,11 @@
   # graphics
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = true;
+    branch = "stable";
     modesetting.enable = true;
     powerManagement.enable = true;
+    powerManagement.kernelSuspendNotifier = true;
     # https://nixos.wiki/wiki/Nvidia
     # https://github.com/NixOS/nixpkgs/issues/73494
     # https://github.com/hyprwm/Hyprland/issues/2950
