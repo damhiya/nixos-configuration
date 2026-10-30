@@ -95,6 +95,23 @@
         "type": "github"
       }
     },
+    "kime-nixpkgs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791734076,
+        "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
+        "owner": "damhiya",
+        "repo": "nixpkgs",
+        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "damhiya",
+        "repo": "nixpkgs",
+        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "type": "github"
+      }
+    },
     "kmonad": {
       "inputs": {
         "nixpkgs": [
@@ -155,6 +172,7 @@
         "hhg-overlay": "hhg-overlay",
         "home-manager": "home-manager",
         "iosevka-custom": "iosevka-custom",
+        "kime-nixpkgs": "kime-nixpkgs",
         "kmonad": "kmonad",
         "nixpkgs": "nixpkgs_2"
       }

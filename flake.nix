@@ -14,6 +14,10 @@
 
   inputs = {
     nixpkgs.url = "github:damhiya/nixpkgs/nixos-unstable";
+    kime-nixpkgs = {
+      url = "github:damhiya/nixpkgs/7fd4004d0511991fff3a0524856a9be09e28c5f0";
+      flake = false;
+    };
     aquamarine-src = {
       url = "github:damhiya/aquamarine/fix/restore-stale-crtcs";
       flake = false;
@@ -37,6 +41,7 @@
     {
       self,
       nixpkgs,
+      kime-nixpkgs,
       aquamarine-src,
       home-manager,
       kmonad,
@@ -59,6 +64,12 @@
               aquamarine = prev.aquamarine.overrideAttrs (_old: {
                 src = aquamarine-src;
               });
+            })
+            (_final: prev: {
+              kime = (import kime-nixpkgs {
+                system = prev.stdenv.hostPlatform.system;
+                config = prev.config;
+              }).kime;
             })
           ];
           config = {
