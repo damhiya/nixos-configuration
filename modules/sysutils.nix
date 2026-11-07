@@ -6,6 +6,8 @@
     pciutils
     usbutils
     gptfdisk
+    btrfs-progs
+    cryptsetup
 
     # compressors
     zip
